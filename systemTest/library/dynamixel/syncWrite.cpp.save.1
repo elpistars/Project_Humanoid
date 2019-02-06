@@ -1,0 +1,176 @@
+#ifndef SYNCWRITE_C
+#define SYNCWRITE_C
+
+#include "/home/pi/systemTest/library/allLib.h"
+//#include "/home/pi/systemTest/library/movement/move.h"
+
+#define P_TORQUE 24
+
+#define P_GOAL_SPEED_L 32
+
+#define P_GOAL_POSITION 30
+
+void kirimPacketSpeed(int totalServo, int id[], int sp){ //Buat ngeset kecepatan servo
+        int l=2;
+        int n=totalServo;
+
+        dxl_set_txpacket_id(BROADCAST_ID); //Jangan diubah 0xFE
+        //dxl_set_txpacket_length(); //jumlah paket yang dikirim 0x18
+        dxl_set_txpacket_instruction(INST_SYNC_WRITE);//instruksi 0x83
+        dxl_set_txpacket_parameter(0,P_GOAL_SPEED_L);//yang mau ditulis 0x1E
+        dxl_set_txpacket_parameter(1,2);//Jumlah data per servo
+        for( int i=0; i<totalServo;i++){
+                dxl_set_txpacket_parameter(2+3*i+0,id[i]);
+                dxl_set_txpacket_parameter(2+3*i+1,dxl_get_lowbyte(sp));
+                dxl_set_txpacket_parameter(2+3*i+2,dxl_get_highbyte(sp));
+        }
+
+        dxl_set_txpacket_length((l+1)*n+4);
+        dxl_txrx_packet();
+
+}
+java -jar GameController.jar -b 192.168.179.255
+java -jar GameController.jar -b 192.168.179.255
+
+
+void kirimPacketGerak(int totalServo, int totalStep, int start,  int id[],int data[], bool active, int delay){ //Buat gerakin servo
+        if (active){
+                int l=2;
+                int n=totalServo;
+                        dxl_set_txpacket_id(BROADCAST_ID); //Jangan diubah 0xFE
+                        dxl_set_txpacket_instruction(INST_SYNC_WRITE);//instruksi 0x83
+                        dxl_set_txpacket_parameter(0,P_GOAL_POSITION);//yang mau ditulis 0x1E
+                        dxl_set_txpacket_parameter(1,2);//Jumlah data per servo
+                                for(int j=start-1; j<totalServo;j++){
+                                        dxl_set_txpacket_parameter(2+3*j+0,id[j]);
+                                        dxl_set_txpacket_parameter(2+3*j+1,dxl_get_lowbyte(data[j]));
+                                        dxl_set_txpacket_parameter(2+3*j+2,dxl_get_highbyte(data[j]));
+                                }
+                        dxl_set_txpacket_length((l+1)*n+4);
+                        dxl_txrx_packet();//jumlah paket yang dikirim 0x18
+                        usleep(delay);
+                        
+        }
+}
+
+
+void kirimPacketGerak(int totalServo, int totalStep, int start,  int id[],int data[][18],bool active,int delay[],int speed[]){ //Buat gerakin servo
+        if (active){
+                int l=2;
+                int n=totalServo;
+                for(int i=start-1; i<totalStep;i++){
+			kirimPacketSpeed(18,id,speed[i]);
+                        dxl_set_txpacket_id(BROADCAST_ID); //Jangan diubah 0xFE
+                        dxl_set_txpacket_instruction(INST_SYNC_WRITE);//instruksi 0x83
+                        dxl_set_txpacket_parameter(0,P_GOAL_POSITION);//yang mau ditulis 0x1E
+                        dxl_set_txpacket_parameter(1,2);//Jumlah data per servo
+                                for(int j=0; j<totalServo;j++){
+                                        dxl_set_txpacket_parameter(2+3*j+0,id[j]);
+                                        dxl_set_txpacket_parameter(2+3*j+1,dxl_get_lowbyte(data[i][j]));
+                                        dxl_set_txpacket_parameter(2+3*j+2,dxl_get_highbyte(data[i][j]));
+                                }
+                        dxl_set_txpacket_length((l+1)*n+4);
+                        dxl_txrx_packet();//jumlah paket yang dikirim 0x18
+                        usleep(delay[i]);
+                }
+        }
+}
+
+
+void kirimPacketGerak(int totalServo, int totalStep, int start,  int id[],int data[][18],bool active, int delay){ //Buat gerakin servo
+        if (active){
+		int l=2;
+        	int n=totalServo;
+		for(int i=start-1; i<totalStep;i++){
+			dxl_set_txpacket_id(BROADCAST_ID); //Jangan diubah 0xFE
+        		dxl_set_txpacket_instruction(INST_SYNC_WRITE);//instruksi 0x83
+        		dxl_set_txpacket_parameter(0,P_GOAL_POSITION);//yang mau ditulis 0x1E
+        		dxl_set_txpacket_parameter(1,2);//Jumlah data per servo
+        			for(int j=0; j<totalServo;j++){
+                			dxl_set_txpacket_parameter(2+3*j+0,id[j]);
+                			dxl_set_txpacket_parameter(2+3*j+1,dxl_get_lowbyte(data[i][j]));
+                			dxl_set_txpacket_parameter(2+3*j+2,dxl_get_highbyte(data[i][j]));
+				}
+        		dxl_set_txpacket_length((l+1)*n+4);
+        		dxl_txrx_packet();//jumlah paket yang dikirim 0x18
+			usleep(delay);
+		}
+	}
+}
+                                //total servo yg digerakin //array ID yang mau digerakin //kecepatan
+
+void kirimPacketTorque(int totalServo, int id[], int torque){ //Buat ngeset kecepatan servo
+        int l=1;
+        int n=totalServo;
+
+        dxl_set_txpacket_id(BROADCAST_ID); //Jangan diubah 0xFE
+        //dxl_set_txpacket_length(); //jumlah paket yang dikirim 0x18
+        dxl_set_txpacket_instruction(INST_SYNC_WRITE);//instruksi 0x83
+        dxl_set_txpacket_parameter(0,P_TORQUE);//yang mau ditulis 0x1E
+        dxl_set_txpacket_parameter(1,1);//Jumlah data per servo
+        for( int i=0; i<totalServo;i++){
+ dxl_set_txpacket_parameter(2+3*i+0,id[i]);
+                dxl_set_txpacket_parameter(2+3*i+1,torque);
+        }
+
+        dxl_set_txpacket_length((l+1)*n+4);
+        dxl_txrx_packet();
+
+}
+
+
+
+void PrintErrorCode() {
+	if(dxl_get_rxpacket_error(ERRBIT_VOLTAGE) == 1)
+		printf("Input voltage error!\n");
+	if(dxl_get_rxpacket_error(ERRBIT_ANGLE) == 1)
+		printf("Angle limit error!\n");
+	if(dxl_get_rxpacket_error(ERRBIT_OVERHEAT) == 1)
+		printf("Overheat error!\n");
+	if(dxl_get_rxpacket_error(ERRBIT_RANGE) == 1)
+		printf("Out of range error!\n");
+	if(dxl_get_rxpacket_error(ERRBIT_CHECKSUM) == 1)
+		printf("Checksum error!\n");
+	if(dxl_get_rxpacket_error(ERRBIT_OVERLOAD) == 1)
+		printf("Overload error!\n");
+	if(dxl_get_rxpacket_error(ERRBIT_INSTRUCTION) == 1)
+		printf("Instruction code error!\n");
+}
+
+void PrintCommStatus(int CommStatus) {
+	switch(CommStatus)
+	{
+	case COMM_TXFAIL:
+		printf("COMM_TXFAIL: Failed transmit instruction packet!\n");
+		break;
+	case COMM_TXERROR:
+		printf("COMM_TXERROR: Incorrect instruction packet!\n");
+		break;
+	case COMM_RXFAIL:
+		printf("COMM_RXFAIL: Failed get status packet from device!\n");
+		break;
+	case COMM_RXWAITING:
+		printf("COMM_RXWAITING: Now recieving status packet!\n");
+		break;
+	case COMM_RXTIMEOUT:
+		printf("COMM_RXTIMEOUT: There is no status packet!\n");
+		break;
+	case COMM_RXCORRUPT:
+		printf("COMM_RXCORRUPT: Incorrect status packet!\n");
+		break;
+	default:
+		printf("This is unknown error code!\n");
+		break;
+	}
+}
+
+void setAllSpeed(int speed){
+	dxl_write_word(BROADCAST_ID,32,speed);
+}
+
+void setAllTorque(int torque){
+	dxl_write_word(BROADCAST_ID,34,torque);
+}
+
+
+#endif

@@ -1,0 +1,3 @@
+/home/pi/systemTest/CMakeFiles/rebuild_cache.dir
+/home/pi/systemTest/CMakeFiles/edit_cache.dir
+/home/pi/systemTest/CMakeFiles/expo.dir

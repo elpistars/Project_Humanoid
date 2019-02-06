@@ -1,0 +1,47 @@
+#include "/home/pi/systemTest/library/allLib.h"
+
+
+#define P_GOAL_SPEED_L 32
+
+#define P_GOAL_POSITION 30
+
+void kirimPacketGerak(int totalServo, int id[],int data[][]){ //Buat gerakin servo
+        int l=2;
+        int n=totalServo;
+        int i=0;
+ dxl_set_txpacket_id(BROADCAST_ID); //Jangan diubah 0xFE
+        dxl_set_txpacket_instruction(INST_SYNC_WRITE);//instruksi 0x83
+        dxl_set_txpacket_parameter(0,P_GOAL_POSITION);//yang mau ditulis 0x1E
+        dxl_set_txpacket_parameter(1,l);//Jumlah data per servo
+        for( int i=0; i<totalServo;i++){
+		for(int j=0; )
+                dxl_set_txpacket_parameter(2+3*i+0,id[i]);
+                dxl_set_txpacket_parameter(2+3*i+1,dxl_get_lowbyte(data[i]));
+                dxl_set_txpacket_parameter(2+3*i+2,dxl_get_highbyte(data[i]));
+                }
+        dxl_set_txpacket_length((l+1)*n+4);
+        dxl_txrx_packet();//jumlah paket yang dikirim 0x18
+}
+                                //total servo yg digerakin //array ID yang mau digerakin //kecepatan
+void kirimPacketSpeed(int totalServo, int id[], int sp){ //Buat ngeset kecepatan servo
+            int l=2;
+        int n=totalServo;
+        int i=0;
+
+        dxl_set_txpacket_id(BROADCAST_ID); //Jangan diubah 0xFE
+        //dxl_set_txpacket_length(); //jumlah paket yang dikirim 0x18
+        dxl_set_txpacket_instruction(INST_SYNC_WRITE);//instruksi 0x83
+        dxl_set_txpacket_parameter(0,P_GOAL_SPEED_L);//yang mau ditulis 0x1E
+        dxl_set_txpacket_parameter(1,l);//Jumlah data per servo
+        for( int i=0; i<totalServo;i++){
+ dxl_set_txpacket_parameter(2+3*i+0,id[i]);
+                dxl_set_txpacket_parameter(2+3*i+1,dxl_get_lowbyte(sp));
+                dxl_set_txpacket_parameter(2+3*i+2,dxl_get_highbyte(sp));
+        }
+
+        dxl_set_txpacket_length((l+1)*n+4);
+        dxl_txrx_packet();
+
+}
+
+

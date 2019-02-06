@@ -1,0 +1,12 @@
+#include "/home/pi/systemTest/library/allLib.h"
+#include "library/sensor/LSM303.h"
+#include "library/sensor/L3G.h"
+#include "library/sensor/sensor.c"
+
+int main(){
+	string status;
+	enableIMU();
+	
+
+}
+

@@ -1,0 +1,1292 @@
+
+#ifndef MOVE_H
+#define MOVE_H
+
+#include "/home/pi/systemTest/library/allLib.h"
+#include "/home/pi/systemTest/library/movement/moveArray.h"
+#include "/home/pi/systemTest/library/dynamixel/syncWrite.cpp"
+//#include "/home/pi/systemTest/library/sensor/sensor.c"
+
+///////////////////////////////////define end here//////////////////////////////////
+int bKa1;
+int bKi1;
+int bKa2;
+int bKi2;
+int bKa3;
+int bKi3;
+int bKa4;
+int bKi4;
+int bKa5;
+int bKi5;
+int bKa6;
+int bKi6;
+
+
+
+////////////////////////////void set and reset parameter ,tunging ///////////////////////////
+
+void set_siap_jalan(int Ka1, int Ki1, int Ka2, int Ki2, int Ka3, int Ki3, int Ka4, int Ki4, int Ka5, int Ki5, int Ka6, int Ki6)
+{
+
+	walkReady[0]=walkReady[0]+Ka1; walkReady[1]=walkReady[1]-Ki1;
+	walkReady[8]=walkReady[8]+Ka2; walkReady[9]=walkReady[9]-Ki2;
+	walkReady[10]=walkReady[10]+Ka3; walkReady[11]=walkReady[11]-Ki3;
+	walkReady[12]=walkReady[12]+Ka4; walkReady[13]=walkReady[13]-Ki4;
+	walkReady[14]=walkReady[14]+Ka5; walkReady[15]=walkReady[15]-Ki5;
+	walkReady[16]=walkReady[16]+Ka6; walkReady[17]=walkReady[17]-Ki6;
+	bKa1=Ka1;
+	bKa2=Ka2;
+	bKa3=Ka3;
+	bKa4=Ka4;
+	bKa5=Ka5;
+	bKa6=Ka6;
+	bKi1=Ki1;
+	bKi2=Ki2;
+	bKi3=Ki3;
+	bKi4=Ki4;
+	bKi5=Ki5;
+	bKi6=Ki6;
+	Ka1=0;
+	Ka2=0;
+	Ka3=0;
+	Ka4=0;
+	Ka5=0;
+	Ka6=0;
+	Ki1=0;
+	Ki2=0;
+	Ki3=0;
+	Ki4=0;
+	Ki5=0;
+	Ki6=0;
+}
+
+void set_parameterjalan(int Ka1, int Ki1, int Ka2, int Ki2, int Ka3, int Ki3, int Ka4, int Ki4, int Ka5, int Ki5, int Ka6, int Ki6)
+{
+        //********************   SET ALL ARRAY   *********************// 
+        for ( int Xid = 0; Xid < 6 ; Xid++)
+        {
+		FSL[Xid][0]=FSL[Xid][0]+Ka1; FSL[Xid][1]=FSL[Xid][1]-Ki1;
+		FSL[Xid][8]=FSL[Xid][8]+Ka2; FSL[Xid][9]=FSL[Xid][9]-Ki2;
+		FSL[Xid][10]=FSL[Xid][10]+Ka3; FSL[Xid][11]=FSL[Xid][11]-Ki3;
+		FSL[Xid][12]=FSL[Xid][12]+Ka4; FSL[Xid][13]=FSL[Xid][13]-Ki4;
+        FSL[Xid][14]=FSL[Xid][14]+Ka5; FSL[Xid][15]=FSL[Xid][15]-Ki5;
+	    FSL[Xid][16]=FSL[Xid][16]+Ka6; FSL[Xid][17]=FSL[Xid][17]-Ki6;
+
+        FSL2[Xid][0]=FSL2[Xid][0]+Ka1; FSL2[Xid][1]=FSL2[Xid][1]-Ki1;
+		FSL2[Xid][8]=FSL2[Xid][8]+Ka2; FSL2[Xid][9]=FSL2[Xid][9]-Ki2;
+		FSL2[Xid][10]=FSL2[Xid][10]+Ka3; FSL2[Xid][11]=FSL2[Xid][11]-Ki3;
+		FSL2[Xid][12]=FSL2[Xid][12]+Ka4; FSL2[Xid][13]=FSL2[Xid][13]-Ki4;
+        FSL2[Xid][14]=FSL2[Xid][14]+Ka5; FSL2[Xid][15]=FSL2[Xid][15]-Ki5;
+	    FSL2[Xid][16]=FSL2[Xid][16]+Ka6; FSL2[Xid][17]=FSL2[Xid][17]-Ki6;
+		
+        FML[Xid][0]=FML[Xid][0]+Ka1; FML[Xid][1]=FML[Xid][1]-Ki1;
+		FML[Xid][8]=FML[Xid][8]+Ka2; FML[Xid][9]=FML[Xid][9]-Ki2;
+		FML[Xid][10]=FML[Xid][10]+Ka3; FML[Xid][11]=FML[Xid][11]-Ki3;
+		FML[Xid][12]=FML[Xid][12]+Ka4; FML[Xid][13]=FML[Xid][13]-Ki4;
+        FML[Xid][14]=FML[Xid][14]+Ka5; FML[Xid][15]=FML[Xid][15]-Ki5;
+	    FML[Xid][16]=FML[Xid][16]+Ka6; FML[Xid][17]=FML[Xid][17]-Ki6;
+		
+        FML2[Xid][0]=FML2[Xid][0]+Ka1; FML2[Xid][1]=FML2[Xid][1]-Ki1;
+		FML2[Xid][8]=FML2[Xid][8]+Ka2; FML2[Xid][9]=FML2[Xid][9]-Ki2;
+		FML2[Xid][10]=FML2[Xid][10]+Ka3; FML2[Xid][11]=FML2[Xid][11]-Ki3;
+		FML2[Xid][12]=FML2[Xid][12]+Ka4; FML2[Xid][13]=FML2[Xid][13]-Ki4;
+        FML2[Xid][14]=FML2[Xid][14]+Ka5; FML2[Xid][15]=FML2[Xid][15]-Ki5;
+	    FML2[Xid][16]=FML2[Xid][16]+Ka6; FML2[Xid][17]=FML2[Xid][17]-Ki6;
+
+        FMR[Xid][0]=FMR[Xid][0]+Ka1; FMR[Xid][1]=FMR[Xid][1]-Ki1;
+		FMR[Xid][8]=FMR[Xid][8]+Ka2; FMR[Xid][9]=FMR[Xid][9]-Ki2;
+		FMR[Xid][10]=FMR[Xid][10]+Ka3; FMR[Xid][11]=FMR[Xid][11]-Ki3;
+		FMR[Xid][12]=FMR[Xid][12]+Ka4; FMR[Xid][13]=FMR[Xid][13]-Ki4;
+        FMR[Xid][14]=FMR[Xid][14]+Ka5; FMR[Xid][15]=FMR[Xid][15]-Ki5;
+	    FMR[Xid][16]=FMR[Xid][16]+Ka6; FMR[Xid][17]=FMR[Xid][17]-Ki6;
+
+		FMR2[Xid][0]=FMR2[Xid][0]+Ka1; FMR2[Xid][1]=FMR2[Xid][1]-Ki1;
+		FMR2[Xid][8]=FMR2[Xid][8]+Ka2; FMR2[Xid][9]=FMR2[Xid][9]-Ki2;
+		FMR2[Xid][10]=FMR2[Xid][10]+Ka3; FMR2[Xid][11]=FMR2[Xid][11]-Ki3;
+		FMR2[Xid][12]=FMR2[Xid][12]+Ka4; FMR2[Xid][13]=FMR2[Xid][13]-Ki4;
+        FMR2[Xid][14]=FMR2[Xid][14]+Ka5; FMR2[Xid][15]=FMR2[Xid][15]-Ki5;
+	    FMR2[Xid][16]=FMR2[Xid][16]+Ka6; FMR2[Xid][17]=FMR2[Xid][17]-Ki6;
+
+		FER[Xid][0]=FER[Xid][0]+Ka1; FER[Xid][1]=FER[Xid][1]-Ki1;
+		FER[Xid][8]=FER[Xid][8]+Ka2; FER[Xid][9]=FER[Xid][9]-Ki2;
+		FER[Xid][10]=FER[Xid][10]+Ka3; FER[Xid][11]=FER[Xid][11]-Ki3;
+		FER[Xid][12]=FER[Xid][12]+Ka4; FER[Xid][13]=FER[Xid][13]-Ki4;
+        FER[Xid][14]=FER[Xid][14]+Ka5; FER[Xid][15]=FER[Xid][15]-Ki5;
+	    FER[Xid][16]=FER[Xid][16]+Ka6; FER[Xid][17]=FER[Xid][17]-Ki6;
+
+        FER2[Xid][0]=FER2[Xid][0]+Ka1; FER2[Xid][1]=FER2[Xid][1]-Ki1;
+		FER2[Xid][8]=FER2[Xid][9]+Ka2; FER2[Xid][9]=FER2[Xid][9]-Ki2;
+		FER2[Xid][10]=FER2[Xid][10]+Ka3; FER2[Xid][11]=FER2[Xid][11]-Ki3;
+		FER2[Xid][12]=FER2[Xid][12]+Ka4; FER2[Xid][13]=FER2[Xid][13]-Ki4;
+        FER2[Xid][14]=FER2[Xid][14]+Ka5; FER2[Xid][15]=FER2[Xid][15]-Ki5;
+	    FER2[Xid][16]=FER2[Xid][16]+Ka6; FER2[Xid][17]=FER2[Xid][17]-Ki6;
+
+	}
+	bKa1=Ka1;
+	bKa2=Ka2;
+	bKa3=Ka3;
+	bKa4=Ka4;
+	bKa5=Ka5;
+	bKa6=Ka6;
+	bKi1=Ki1;
+	bKi2=Ki2;
+	bKi3=Ki3;
+	bKi4=Ki4;
+	bKi5=Ki5;
+	bKi6=Ki6;
+	Ka1=0;
+	Ka2=0;
+	Ka3=0;
+	Ka4=0;
+	Ka5=0;
+	Ka6=0;
+	Ki1=0;
+	Ki2=0;
+	Ki3=0;
+	Ki4=0;
+	Ki5=0;
+	Ki6=0;
+}
+
+void set_parametergeser_kiri(int Ka1, int Ki1, int Ka2, int Ki2, int Ka3, int Ki3, int Ka4, int Ki4, int Ka5, int Ki5, int Ka6, int Ki6)
+{
+        //********************   SET ALL ARRAY   *********************// 
+        for ( int Xid = 0; Xid < 7 ; Xid++)
+        {
+		LML[Xid][0]=LML[Xid][0]+Ka1; LML[Xid][1]=LML[Xid][1]-Ki1;
+		LML[Xid][8]=LML[Xid][8]+Ka2; LML[Xid][9]=LML[Xid][9]-Ki2;
+		LML[Xid][10]=LML[Xid][10]+Ka3; LML[Xid][11]=LML[Xid][11]-Ki3;
+		LML[Xid][12]=LML[Xid][12]+Ka4; LML[Xid][13]=LML[Xid][13]-Ki4;
+        LML[Xid][14]=LML[Xid][14]+Ka5; LML[Xid][15]=LML[Xid][15]-Ki5;
+	    LML[Xid][16]=LML[Xid][16]+Ka6; LML[Xid][17]=LML[Xid][17]-Ki6;
+		
+		LML2[Xid][0]=LML2[Xid][0]+Ka1; LML2[Xid][1]=LML2[Xid][1]-Ki1;
+		LML2[Xid][8]=LML2[Xid][8]+Ka2; LML2[Xid][9]=LML2[Xid][9]-Ki2;
+		LML2[Xid][10]=LML2[Xid][10]+Ka3; LML2[Xid][11]=LML2[Xid][11]-Ki3;
+		LML2[Xid][12]=LML2[Xid][12]+Ka4; LML2[Xid][13]=LML2[Xid][13]-Ki4;
+        LML2[Xid][14]=LML2[Xid][14]+Ka5; LML2[Xid][15]=LML2[Xid][15]-Ki5;
+	    LML2[Xid][16]=LML2[Xid][16]+Ka6; LML2[Xid][17]=LML2[Xid][17]-Ki6;
+		
+		LMR[Xid][0]=LMR[Xid][0]+Ka1; LMR[Xid][1]=LMR[Xid][1]-Ki1;
+		LMR[Xid][8]=LMR[Xid][8]+Ka2; LMR[Xid][9]=LMR[Xid][9]-Ki2;
+		LMR[Xid][10]=LMR[Xid][10]+Ka3; LMR[Xid][11]=LMR[Xid][11]-Ki3;
+		LMR[Xid][12]=LMR[Xid][12]+Ka4; LMR[Xid][13]=LMR[Xid][13]-Ki4;
+        LMR[Xid][14]=LMR[Xid][14]+Ka5; LMR[Xid][15]=LMR[Xid][15]-Ki5;
+	    LMR[Xid][16]=LMR[Xid][16]+Ka6; LMR[Xid][17]=LMR[Xid][17]-Ki6;
+
+		LMR2[Xid][0]=LMR2[Xid][0]+Ka1; LMR2[Xid][1]=LMR2[Xid][1]-Ki1;
+		LMR2[Xid][8]=LMR2[Xid][8]+Ka2; LMR2[Xid][9]=LMR2[Xid][9]-Ki2;
+		LMR2[Xid][10]=LMR2[Xid][10]+Ka3; LMR2[Xid][11]=LMR2[Xid][11]-Ki3;
+		LMR2[Xid][12]=LMR2[Xid][12]+Ka4; LMR2[Xid][13]=LMR2[Xid][13]-Ki4;
+        LMR2[Xid][14]=LMR2[Xid][14]+Ka5; LMR2[Xid][15]=LMR2[Xid][15]-Ki5;
+	    LMR2[Xid][16]=LMR2[Xid][16]+Ka6; LMR2[Xid][17]=LMR2[Xid][17]-Ki6;
+		
+		}
+	bKa1=Ka1;
+	bKa2=Ka2;
+	bKa3=Ka3;
+	bKa4=Ka4;
+	bKa5=Ka5;
+	bKa6=Ka6;
+	bKi1=Ki1;
+	bKi2=Ki2;
+	bKi3=Ki3;
+	bKi4=Ki4;
+	bKi5=Ki5;
+	bKi6=Ki6;
+	Ka1=0;
+	Ka2=0;
+	Ka3=0;
+	Ka4=0;
+	Ka5=0;
+	Ka6=0;
+	Ki1=0;
+	Ki2=0;
+	Ki3=0;
+	Ki4=0;
+	Ki5=0;
+	Ki6=0;
+}
+
+void set_parametergeser_kanan(int Ka1, int Ki1, int Ka2, int Ki2, int Ka3, int Ki3, int Ka4, int Ki4, int Ka5, int Ki5, int Ka6, int Ki6)
+{
+        //********************   SET ALL ARRAY   *********************// 
+        for ( int Xid = 0; Xid < 7 ; Xid++)
+        {
+		RML[Xid][0]=RML[Xid][0]+Ka1; RML[Xid][1]=RML[Xid][1]-Ki1;
+		RML[Xid][8]=RML[Xid][8]+Ka2; RML[Xid][9]=RML[Xid][9]-Ki2;
+		RML[Xid][10]=RML[Xid][10]+Ka3; RML[Xid][11]=RML[Xid][11]-Ki2;
+		RML[Xid][12]=RML[Xid][12]+Ka4; RML[Xid][13]=RML[Xid][13]-Ki3;
+        RML[Xid][14]=RML[Xid][14]+Ka5; RML[Xid][15]=RML[Xid][15]-Ki4;
+	    RML[Xid][16]=RML[Xid][16]+Ka6; RML[Xid][17]=RML[Xid][17]-Ki5;
+		
+		RML2[Xid][0]=RML2[Xid][0]+Ka1; RML2[Xid][1]=RML2[Xid][1]-Ki1;
+		RML2[Xid][8]=RML2[Xid][8]+Ka2; RML2[Xid][9]=RML2[Xid][9]-Ki2;
+		RML2[Xid][10]=RML2[Xid][10]+Ka3; RML2[Xid][11]=RML2[Xid][11]-Ki3;
+		RML2[Xid][12]=RML2[Xid][12]+Ka4; RML2[Xid][13]=RML2[Xid][13]-Ki4;
+        RML2[Xid][14]=RML2[Xid][14]+Ka5; RML2[Xid][15]=RML2[Xid][15]-Ki5;
+	    RML2[Xid][16]=RML2[Xid][16]+Ka6; RML2[Xid][17]=RML2[Xid][17]-Ki6;
+		
+		RMR[Xid][0]=RMR[Xid][0]+Ka1; RMR[Xid][1]=RMR[Xid][1]-Ki1;
+		RMR[Xid][8]=RMR[Xid][8]+Ka2; RMR[Xid][9]=RMR[Xid][9]-Ki2;
+		RMR[Xid][10]=RMR[Xid][10]+Ka3; RMR[Xid][11]=RMR[Xid][11]-Ki3;
+		RMR[Xid][12]=RMR[Xid][12]+Ka4; RMR[Xid][13]=RMR[Xid][13]-Ki4;
+        RMR[Xid][14]=RMR[Xid][14]+Ka5; RMR[Xid][15]=RMR[Xid][15]-Ki5;
+	    RMR[Xid][16]=RMR[Xid][16]+Ka6; RMR[Xid][17]=RMR[Xid][17]-Ki6;
+
+		RMR2[Xid][0]=RMR2[Xid][0]+Ka1; RMR2[Xid][1]=RMR2[Xid][1]-Ki1;
+		RMR2[Xid][8]=RMR2[Xid][8]+Ka2; RMR2[Xid][9]=RMR2[Xid][9]-Ki2;
+		RMR2[Xid][10]=RMR2[Xid][10]+Ka3; RMR2[Xid][11]=RMR2[Xid][11]-Ki3;
+		RMR2[Xid][12]=RMR2[Xid][12]+Ka4; RMR2[Xid][13]=RMR2[Xid][13]-Ki4;
+        RMR2[Xid][14]=RMR2[Xid][14]+Ka5; RMR2[Xid][15]=RMR2[Xid][15]-Ki5;
+	    RMR2[Xid][16]=RMR2[Xid][16]+Ka6; RMR2[Xid][17]=RMR2[Xid][17]-Ki6;
+		
+		}
+	bKa1=Ka1;
+	bKa2=Ka2;
+	bKa3=Ka3;
+	bKa4=Ka4;
+	bKa5=Ka5;
+	bKa6=Ka6;
+	bKi1=Ki1;
+	bKi2=Ki2;
+	bKi3=Ki3;
+	bKi4=Ki4;
+	bKi5=Ki5;
+	bKi6=Ki6;
+	Ka1=0;
+	Ka2=0;
+	Ka3=0;
+	Ka4=0;
+	Ka5=0;
+	Ka6=0;
+	Ki1=0;
+	Ki2=0;
+	Ki3=0;
+	Ki4=0;
+	Ki5=0;
+	Ki6=0;
+}
+
+void set_parameterputar_kiri(int Ka1, int Ki1, int Ka2, int Ki2, int Ka3, int Ki3, int Ka4, int Ki4, int Ka5, int Ki5, int Ka6, int Ki6)
+{
+        //********************   SET ALL ARRAY   *********************// 
+
+        for ( int Xid = 0; Xid < 7 ; Xid++)
+        {
+		LTML[Xid][0]=LTML[Xid][0]+Ka1; LTML[Xid][1]=LTML[Xid][1]-Ki1;
+		LTML[Xid][8]=LTML[Xid][8]+Ka2; LTML[Xid][9]=LTML[Xid][9]-Ki2;
+		LTML[Xid][10]=LTML[Xid][10]+Ka3; LTML[Xid][11]=LTML[Xid][11]-Ki3;
+		LTML[Xid][12]=LTML[Xid][12]+Ka4; LTML[Xid][13]=LTML[Xid][13]-Ki4;
+        LTML[Xid][14]=LTML[Xid][14]+Ka5; LTML[Xid][15]=LTML[Xid][15]-Ki5;
+	    LTML[Xid][16]=LTML[Xid][16]+Ka6; LTML[Xid][17]=LTML[Xid][17]-Ki6;
+		
+		LTML2[Xid][0]=LTML2[Xid][0]+Ka1; LTML2[Xid][1]=LTML2[Xid][1]-Ki1;
+		LTML2[Xid][8]=LTML2[Xid][8]+Ka2; LTML2[Xid][9]=LTML2[Xid][9]-Ki2;
+		LTML2[Xid][10]=LTML2[Xid][10]+Ka3; LTML2[Xid][11]=LTML2[Xid][11]-Ki3;
+		LTML2[Xid][12]=LTML2[Xid][12]+Ka4; LTML2[Xid][13]=LTML2[Xid][13]-Ki4;
+        LTML2[Xid][14]=LTML2[Xid][14]+Ka5; LTML2[Xid][15]=LTML2[Xid][15]-Ki5;
+	    LTML2[Xid][16]=LTML2[Xid][16]+Ka6; LTML2[Xid][17]=LTML2[Xid][17]-Ki6;
+		
+		LTMR[Xid][0]=LTMR[Xid][0]+Ka1; LTMR[Xid][1]=LTMR[Xid][1]-Ki1;
+		LTMR[Xid][8]=LTMR[Xid][8]+Ka2; LTMR[Xid][9]=LTMR[Xid][9]-Ki2;
+		LTMR[Xid][10]=LTMR[Xid][10]+Ka3; LTMR[Xid][11]=LTMR[Xid][11]-Ki3;
+		LTMR[Xid][12]=LTMR[Xid][12]+Ka4; LTMR[Xid][13]=LTMR[Xid][13]-Ki4;
+        LTMR[Xid][14]=LTMR[Xid][14]+Ka5; LTMR[Xid][15]=LTMR[Xid][15]-Ki5;
+	    LTMR[Xid][16]=LTMR[Xid][16]+Ka6; LTMR[Xid][17]=LTMR[Xid][17]-Ki6;
+
+		LTMR2[Xid][0]=LTMR2[Xid][0]+Ka1; LTMR2[Xid][1]=LTMR2[Xid][1]-Ki1;
+		LTMR2[Xid][8]=LTMR2[Xid][8]+Ka2; LTMR2[Xid][9]=LTMR2[Xid][9]-Ki2;
+		LTMR2[Xid][10]=LTMR2[Xid][10]+Ka3; LTMR2[Xid][11]=LTMR2[Xid][11]-Ki3;
+		LTMR2[Xid][12]=LTMR2[Xid][12]+Ka4; LTMR2[Xid][13]=LTMR2[Xid][13]-Ki4;
+        LTMR2[Xid][14]=LTMR2[Xid][14]+Ka5; LTMR2[Xid][15]=LTMR2[Xid][15]-Ki5;
+	    LTMR2[Xid][16]=LTMR2[Xid][16]+Ka6; LTMR2[Xid][17]=LTMR2[Xid][17]-Ki6;
+		
+		}
+	bKa1=Ka1;
+	bKa2=Ka2;
+	bKa3=Ka3;
+	bKa4=Ka4;
+	bKa5=Ka5;
+	bKa6=Ka6;
+	bKi1=Ki1;
+	bKi2=Ki2;
+	bKi3=Ki3;
+	bKi4=Ki4;
+	bKi5=Ki5;
+	bKi6=Ki6;
+	Ka1=0;
+	Ka2=0;
+	Ka3=0;
+	Ka4=0;
+	Ka5=0;
+	Ka6=0;
+	Ki1=0;
+	Ki2=0;
+	Ki3=0;
+	Ki4=0;
+	Ki5=0;
+	Ki6=0;
+}
+
+
+void set_parameterputar_kanan(int Ka1, int Ki1, int Ka2, int Ki2, int Ka3, int Ki3, int Ka4, int Ki4, int Ka5, int Ki5, int Ka6, int Ki6)
+{
+        //********************   SET ALL ARRAY   *********************// 
+
+        for ( int Xid = 0; Xid < 7 ; Xid++)
+        {
+		RTML[Xid][0]=RTML[Xid][0]+Ka1; RTML[Xid][1]=RTML[Xid][1]-Ki1;
+		RTML[Xid][8]=RTML[Xid][8]+Ka2; RTML[Xid][9]=RTML[Xid][9]-Ki2;
+		RTML[Xid][10]=RTML[Xid][10]+Ka3; RTML[Xid][11]=RTML[Xid][11]-Ki3;
+		RTML[Xid][12]=RTML[Xid][12]+Ka4; RTML[Xid][13]=RTML[Xid][13]-Ki4;
+        RTML[Xid][14]=RTML[Xid][14]+Ka5; RTML[Xid][15]=RTML[Xid][15]-Ki5;
+	    RTML[Xid][16]=RTML[Xid][16]+Ka6; RTML[Xid][17]=RTML[Xid][17]-Ki6;
+		
+		RTML2[Xid][0]=RTML2[Xid][0]+Ka1; RTML2[Xid][1]=RTML2[Xid][1]-Ki1;
+		RTML2[Xid][8]=RTML2[Xid][8]+Ka2; RTML2[Xid][9]=RTML2[Xid][9]-Ki2;
+		RTML2[Xid][10]=RTML2[Xid][10]+Ka3; RTML2[Xid][11]=RTML2[Xid][11]-Ki3;
+		RTML2[Xid][12]=RTML2[Xid][12]+Ka4; RTML2[Xid][13]=RTML2[Xid][13]-Ki4;
+        RTML2[Xid][14]=RTML2[Xid][14]+Ka5; RTML2[Xid][15]=RTML2[Xid][15]-Ki5;
+	    RTML2[Xid][16]=RTML2[Xid][16]+Ka6; RTML2[Xid][17]=RTML2[Xid][17]-Ki6;
+		
+		RTMR[Xid][0]=RTMR[Xid][0]+Ka1; RTMR[Xid][1]=RTMR[Xid][1]-Ki1;
+		RTMR[Xid][8]=RTMR[Xid][8]+Ka2; RTMR[Xid][9]=RTMR[Xid][9]-Ki2;
+		RTMR[Xid][10]=RTMR[Xid][10]+Ka3; RTMR[Xid][11]=RTMR[Xid][11]-Ki3;
+		RTMR[Xid][12]=RTMR[Xid][12]+Ka4; RTMR[Xid][13]=RTMR[Xid][13]-Ki4;
+        RTMR[Xid][14]=RTMR[Xid][14]+Ka5; RTMR[Xid][15]=RTMR[Xid][15]-Ki5;
+	    RTMR[Xid][16]=RTMR[Xid][16]+Ka6; RTMR[Xid][17]=RTMR[Xid][17]-Ki6;
+
+		RTMR2[Xid][0]=RTMR2[Xid][0]+Ka1; RTMR2[Xid][1]=RTMR2[Xid][1]-Ki1;
+		RTMR2[Xid][8]=RTMR2[Xid][8]+Ka2; RTMR2[Xid][9]=RTMR2[Xid][9]-Ki2;
+		RTMR2[Xid][10]=RTMR2[Xid][10]+Ka3; RTMR2[Xid][11]=RTMR2[Xid][11]-Ki3;
+		RTMR2[Xid][12]=RTMR2[Xid][12]+Ka4; RTMR2[Xid][13]=RTMR2[Xid][13]-Ki4;
+        RTMR2[Xid][14]=RTMR2[Xid][14]+Ka5; RTMR2[Xid][15]=RTMR2[Xid][15]-Ki5;
+	    RTMR2[Xid][16]=RTMR2[Xid][16]+Ka6; RTMR2[Xid][17]=RTMR2[Xid][17]-Ki6;
+		
+		}
+	bKa1=Ka1;
+	bKa2=Ka2;
+	bKa3=Ka3;
+	bKa4=Ka4;
+	bKa5=Ka5;
+	bKa6=Ka6;
+	bKi1=Ki1;
+	bKi2=Ki2;
+	bKi3=Ki3;
+	bKi4=Ki4;
+	bKi5=Ki5;
+	bKi6=Ki6;
+	Ka1=0;
+	Ka2=0;
+	Ka3=0;
+	Ka4=0;
+	Ka5=0;
+	Ka6=0;
+	Ki1=0;
+	Ki2=0;
+	Ki3=0;
+	Ki4=0;
+	Ki5=0;
+	Ki6=0;
+}
+
+		
+///////////////////////////////////////////void reset here//////////////////////////////////
+/*void reset_siap_jalan()
+{
+
+	walkReady[0]=walkReady[0]-bKa1; walkReady[1]=walkReady[1]+bKi1;
+	walkReady[8]=walkReady[8]-bKa2; walkReady[9]=walkReady[9]+bKi2;
+	walkReady[10]=walkReady[10]-bKa3; walkReady[11]=walkReady[11]+bKi3;
+	walkReady[12]=walkReady[12]-bKa4; walkReady[13]=walkReady[13]+bKi4;
+    walkReady[14]=walkReady[14]-bKa5; walkReady[15]=walkReady[15]+bKi5;
+	walkReady[16]=walkReady[16]-bKa6; walkReady[17]=walkReady[17]+bKi6;
+	bKa1=0;
+	bKa2=0;
+	bKa3=0;
+	bKa4=0;
+	bKa5=0;
+	bKa6=0;
+	bKi1=0;
+	bKi2=0;
+	bKi3=0;
+	bKi4=0;
+	bKi5=0;
+	bKi6=0;	
+}*/	
+
+void reset_siap_jalan()
+{
+
+        walkReady[0]=235; walkReady[1]=788; walkReady[2]=279; walkReady[3]=744;
+	walkReady[4]=291; walkReady[5]=733; walkReady[6]=358; walkReady[7]=666;
+        walkReady[8]=507; walkReady[9]=516; walkReady[10]=341; walkReady[11]=682;
+        walkReady[12]=240; walkReady[13]=783; walkReady[14]=647; 
+	walkReady[15]=376; walkReady[16]=507; walkReady[17]=516;
+        bKa1=0;
+        bKa2=0;
+        bKa3=0;
+        bKa4=0;
+        bKa5=0;
+        bKa6=0;
+        bKi1=0;
+        bKi2=0;
+        bKi3=0;
+        bKi4=0;
+        bKi5=0;
+        bKi6=0;
+}
+
+
+	
+void reset_parameter_jalan()
+{
+		for ( int Xid = 0; Xid < 6 ; Xid++)
+        {
+        //********************   RESET ALL ARRAY   *********************// 
+
+        FSL[Xid][0]=FSL[Xid][0]-bKa1; FSL[Xid][1]=FSL[Xid][1]+bKi1;
+		FSL[Xid][8]=FSL[Xid][8]-bKa2; FSL[Xid][9]=FSL[Xid][9]+bKi2;
+		FSL[Xid][10]=FSL[Xid][10]-bKa3; FSL[Xid][11]=FSL[Xid][11]+bKi3;
+		FSL[Xid][12]=FSL[Xid][12]-bKa4; FSL[Xid][13]=FSL[Xid][13]+bKi4;
+        FSL[Xid][14]=FSL[Xid][14]-bKa5; FSL[Xid][15]=FSL[Xid][15]+bKi5;
+	    FSL[Xid][16]=FSL[Xid][16]-bKa6; FSL[Xid][17]=FSL[Xid][17]+bKi6;
+
+		
+        FSL2[Xid][0]=FSL2[Xid][0]-bKa1; FSL2[Xid][1]=FSL2[Xid][1]+bKi1;
+		FSL2[Xid][8]=FSL2[Xid][8]-bKa2; FSL2[Xid][9]=FSL2[Xid][9]+bKi2;
+		FSL2[Xid][10]=FSL2[Xid][10]-bKa3; FSL2[Xid][11]=FSL2[Xid][11]+bKi3;
+		FSL2[Xid][12]=FSL2[Xid][12]-bKa4; FSL2[Xid][13]=FSL2[Xid][13]+bKi4;
+        FSL2[Xid][14]=FSL2[Xid][14]-bKa5; FSL2[Xid][15]=FSL2[Xid][15]+bKi5;
+	    FSL2[Xid][16]=FSL2[Xid][16]-bKa6; FSL2[Xid][17]=FSL2[Xid][17]+bKi6;
+		
+        FML[Xid][0]=FML[Xid][0]-bKa1; FML[Xid][1]=FML[Xid][1]+bKi1;
+		FML[Xid][8]=FML[Xid][8]-bKa2; FML[Xid][9]=FML[Xid][9]+bKi2;
+		FML[Xid][10]=FML[Xid][10]-bKa3; FML[Xid][11]=FML[Xid][11]+bKi3;
+		FML[Xid][12]=FML[Xid][12]-bKa4; FML[Xid][13]=FML[Xid][13]+bKi4;
+        FML[Xid][14]=FML[Xid][14]-bKa5; FML[Xid][15]=FML[Xid][15]+bKi5;
+	    FML[Xid][16]=FML[Xid][16]-bKa6; FML[Xid][17]=FML[Xid][17]+bKi6;
+		
+        FML2[Xid][0]=FML2[Xid][0]-bKa1; FML2[Xid][1]=FML2[Xid][1]+bKi1;
+		FML2[Xid][8]=FML2[Xid][8]-bKa2; FML2[Xid][9]=FML2[Xid][9]+bKi2;
+		FML2[Xid][10]=FML2[Xid][10]-bKa3; FML2[Xid][11]=FML2[Xid][11]+bKi3;
+		FML2[Xid][12]=FML2[Xid][12]-bKa4; FML2[Xid][13]=FML2[Xid][13]+bKi4;
+        FML2[Xid][14]=FML2[Xid][14]-bKa5; FML2[Xid][15]=FML2[Xid][15]+bKi5;
+	    FML2[Xid][16]=FML2[Xid][16]-bKa6; FML2[Xid][17]=FML2[Xid][17]+bKi6;
+
+        FMR[Xid][0]=FMR[Xid][0]-bKa1; FMR[Xid][1]=FMR[Xid][1]+bKi1;
+		FMR[Xid][8]=FMR[Xid][8]-bKa2; FMR[Xid][9]=FMR[Xid][9]+bKi2;
+		FMR[Xid][10]=FMR[Xid][10]-bKa3; FMR[Xid][11]=FMR[Xid][11]+bKi3;
+		FMR[Xid][12]=FMR[Xid][12]-bKa4; FMR[Xid][13]=FMR[Xid][13]+bKi4;
+        FMR[Xid][14]=FMR[Xid][14]-bKa5; FMR[Xid][15]=FMR[Xid][15]+bKi5;
+	    FMR[Xid][16]=FMR[Xid][16]-bKa6; FMR[Xid][17]=FMR[Xid][17]+bKi6;
+
+		FMR2[Xid][0]=FMR2[Xid][0]-bKa1; FMR2[Xid][1]=FMR2[Xid][1]+bKi1;
+		FMR2[Xid][8]=FMR2[Xid][8]-bKa2; FMR2[Xid][9]=FMR2[Xid][9]+bKi2;
+		FMR2[Xid][10]=FMR2[Xid][10]-bKa3; FMR2[Xid][11]=FMR2[Xid][11]+bKi3;
+		FMR2[Xid][12]=FMR2[Xid][12]-bKa4; FMR2[Xid][13]=FMR2[Xid][13]+bKi4;
+        FMR2[Xid][14]=FMR2[Xid][14]-bKa5; FMR2[Xid][15]=FMR2[Xid][15]+bKi5;
+	    FMR2[Xid][16]=FMR2[Xid][16]-bKa6; FMR2[Xid][17]=FMR2[Xid][17]+bKi6;
+
+		FER[Xid][0]=FER[Xid][0]-bKa1; FER[Xid][1]=FER[Xid][1]+bKi1;
+		FER[Xid][8]=FER[Xid][8]-bKa2; FER[Xid][9]=FER[Xid][9]+bKi2;
+		FER[Xid][10]=FER[Xid][10]-bKa3; FER[Xid][11]=FER[Xid][11]+bKi3;
+		FER[Xid][12]=FER[Xid][12]-bKa4; FER[Xid][13]=FER[Xid][13]+bKi4;
+        FER[Xid][14]=FER[Xid][14]-bKa5; FER[Xid][15]=FER[Xid][15]+bKi5;
+	    FER[Xid][16]=FER[Xid][16]-bKa6; FER[Xid][17]=FER[Xid][17]+bKi6;
+
+        FER2[Xid][0]=FER2[Xid][0]-bKa1; FER2[Xid][1]=FER2[Xid][1]+bKi1;
+		FER2[Xid][8]=FER2[Xid][8]-bKa2; FER2[Xid][9]=FER2[Xid][9]+bKi2;
+		FER2[Xid][10]=FER2[Xid][10]-bKa3; FER2[Xid][11]=FER2[Xid][11]+bKi3;
+		FER2[Xid][12]=FER2[Xid][12]-bKa4; FER2[Xid][13]=FER2[Xid][13]+bKi4;
+        FER2[Xid][14]=FER2[Xid][14]-bKa5; FER2[Xid][15]=FER2[Xid][15]+bKi5;
+	    FER2[Xid][16]=FER2[Xid][16]-bKa6; FER2[Xid][17]=FER2[Xid][17]+bKi6;
+	}
+	bKa1=0;
+	bKa2=0;
+	bKa3=0;
+	bKa4=0;
+	bKa5=0;
+	bKa6=0;
+	bKi1=0;
+	bKi2=0;
+	bKi3=0;
+	bKi4=0;
+	bKi5=0;
+	bKi6=0;	
+}
+
+void reset_parametergeser_kiri()
+{
+        //********************   SET ALL ARRAY   *********************// 
+
+        for ( int Xid = 0; Xid < 7 ; Xid++)
+        {
+		LML[Xid][0]=LML[Xid][0]-bKa1; LML[Xid][1]=LML[Xid][1]+bKi1;
+		LML[Xid][8]=LML[Xid][8]-bKa2; LML[Xid][9]=LML[Xid][9]+bKi2;
+		LML[Xid][10]=LML[Xid][10]-bKa3; LML[Xid][11]=LML[Xid][11]+bKi3;
+		LML[Xid][12]=LML[Xid][12]-bKa4; LML[Xid][13]=LML[Xid][13]+bKi4;
+        LML[Xid][14]=LML[Xid][14]-bKa5; LML[Xid][15]=LML[Xid][15]+bKi5;
+	    LML[Xid][16]=LML[Xid][16]-bKa6; LML[Xid][17]=LML[Xid][17]+bKi6;
+		
+		LML2[Xid][0]=LML2[Xid][0]-bKa1; LML2[Xid][1]=LML2[Xid][1]+bKi1;
+		LML2[Xid][8]=LML2[Xid][8]-bKa2; LML2[Xid][9]=LML2[Xid][9]+bKi2;
+		LML2[Xid][10]=LML2[Xid][10]-bKa3; LML2[Xid][11]=LML2[Xid][11]+bKi3;
+		LML2[Xid][12]=LML2[Xid][12]-bKa4; LML2[Xid][13]=LML2[Xid][13]+bKi4;
+        LML2[Xid][14]=LML2[Xid][14]-bKa5; LML2[Xid][15]=LML2[Xid][15]+bKi5;
+	    LML2[Xid][16]=LML2[Xid][16]-bKa6; LML2[Xid][17]=LML2[Xid][17]+bKi6;
+		
+		LMR[Xid][0]=LMR[Xid][0]-bKa1; LMR[Xid][1]=LMR[Xid][1]+bKi1;
+		LMR[Xid][8]=LMR[Xid][8]-bKa2; LMR[Xid][9]=LMR[Xid][9]+bKi2;
+		LMR[Xid][10]=LMR[Xid][10]-bKa3; LMR[Xid][11]=LMR[Xid][11]+bKi3;
+		LMR[Xid][12]=LMR[Xid][12]-bKa4; LMR[Xid][13]=LMR[Xid][13]+bKi4;
+        LMR[Xid][14]=LMR[Xid][14]-bKa5; LMR[Xid][15]=LMR[Xid][15]+bKi5;
+	    LMR[Xid][16]=LMR[Xid][16]-bKa6; LMR[Xid][17]=LMR[Xid][17]+bKi6;
+
+		LMR2[Xid][0]=LMR2[Xid][0]-bKa1; LMR2[Xid][1]=LMR2[Xid][1]+bKi1;
+		LMR2[Xid][8]=LMR2[Xid][8]-bKa2; LMR2[Xid][9]=LMR2[Xid][9]+bKi2;
+		LMR2[Xid][10]=LMR2[Xid][10]-bKa3; LMR2[Xid][11]=LMR2[Xid][11]+bKi3;
+		LMR2[Xid][12]=LMR2[Xid][12]-bKa4; LMR2[Xid][13]=LMR2[Xid][13]+bKi4;
+        LMR2[Xid][14]=LMR2[Xid][14]-bKa5; LMR2[Xid][15]=LMR2[Xid][15]+bKi5;
+	    LMR2[Xid][16]=LMR2[Xid][16]-bKa6; LMR2[Xid][17]=LMR2[Xid][17]+bKi6;
+		
+		}
+	bKa1=0;
+	bKa2=0;
+	bKa3=0;
+	bKa4=0;
+	bKa5=0;
+	bKa6=0;
+	bKi1=0;
+	bKi2=0;
+	bKi3=0;
+	bKi4=0;
+	bKi5=0;
+	bKi6=0;
+}
+
+void reset_parametergeser_kanan()
+{
+        //********************   SET ALL ARRAY   *********************// 
+
+        
+for ( int Xid = 0; Xid < 7 ; Xid++)
+        {
+		RML[Xid][0]=RML[Xid][0]-bKa1; RML[Xid][1]=RML[Xid][1]+bKi1;
+		RML[Xid][8]=RML[Xid][8]-bKa2; RML[Xid][9]=RML[Xid][9]+bKi2;
+		RML[Xid][10]=RML[Xid][10]-bKa3; RML[Xid][11]=RML[Xid][11]+bKi3;
+		RML[Xid][12]=RML[Xid][12]-bKa4; RML[Xid][13]=RML[Xid][13]+bKi4;
+        RML[Xid][14]=RML[Xid][14]-bKa5; RML[Xid][15]=RML[Xid][15]+bKi5;
+	    RML[Xid][16]=RML[Xid][16]-bKa6; RML[Xid][17]=RML[Xid][17]+bKi6;
+		
+		RML2[Xid][0]=RML2[Xid][0]-bKa1; RML2[Xid][1]=RML2[Xid][1]+bKi1;
+		RML2[Xid][8]=RML2[Xid][8]-bKa2; RML2[Xid][9]=RML2[Xid][9]+bKi2;
+		RML2[Xid][10]=RML2[Xid][10]-bKa3; RML2[Xid][11]=RML2[Xid][11]+bKi3;
+		RML2[Xid][12]=RML2[Xid][12]-bKa4; RML2[Xid][13]=RML2[Xid][13]+bKi4;
+        RML2[Xid][14]=RML2[Xid][14]-bKa5; RML2[Xid][15]=RML2[Xid][15]+bKi5;
+	    RML2[Xid][16]=RML2[Xid][16]-bKa6; RML2[Xid][17]=RML2[Xid][17]+bKi6;
+		
+		RMR[Xid][0]=RMR[Xid][0]-bKa1; RMR[Xid][1]=RMR[Xid][1]+bKi1;
+		RMR[Xid][8]=RMR[Xid][8]-bKa2; RMR[Xid][9]=RMR[Xid][9]+bKi2;
+		RMR[Xid][10]=RMR[Xid][10]-bKa3; RMR[Xid][11]=RMR[Xid][11]+bKi3;
+		RMR[Xid][12]=RMR[Xid][12]-bKa4; RMR[Xid][13]=RMR[Xid][13]+bKi4;
+        RMR[Xid][14]=RMR[Xid][14]-bKa5; RMR[Xid][15]=RMR[Xid][15]+bKi5;
+	    RMR[Xid][16]=RMR[Xid][16]-bKa6; RMR[Xid][17]=RMR[Xid][17]+bKi6;
+
+		RMR2[Xid][0]=RMR2[Xid][0]-bKa1; RMR2[Xid][1]=RMR2[Xid][1]+bKi1;
+		RMR2[Xid][8]=RMR2[Xid][8]-bKa2; RMR2[Xid][9]=RMR2[Xid][9]+bKi2;
+		RMR2[Xid][10]=RMR2[Xid][10]-bKa3; RMR2[Xid][11]=RMR2[Xid][11]+bKi3;
+		RMR2[Xid][12]=RMR2[Xid][12]-bKa4; RMR2[Xid][13]=RMR2[Xid][13]+bKi4;
+        RMR2[Xid][14]=RMR2[Xid][14]-bKa5; RMR2[Xid][15]=RMR2[Xid][15]+bKi5;
+	    RMR2[Xid][16]=RMR2[Xid][16]-bKa6; RMR2[Xid][17]=RMR2[Xid][17]+bKi6;
+		
+		}
+	bKa1=0;
+	bKa2=0;
+	bKa3=0;
+	bKa4=0;
+	bKa5=0;
+	bKa6=0;
+	bKi1=0;
+	bKi2=0;
+	bKi3=0;
+	bKi4=0;
+	bKi5=0;
+	bKi6=0;
+}
+
+void reset_parameterputar_kiri()
+{
+        //********************   SET ALL ARRAY   *********************// 
+
+        for ( int Xid = 0; Xid < 7 ; Xid++)
+        {
+		LTML[Xid][0]=LTML[Xid][0]-bKa1; LTML[Xid][1]=LTML[Xid][1]+bKi1;
+		LTML[Xid][8]=LTML[Xid][8]-bKa2; LTML[Xid][9]=LTML[Xid][9]+bKi2;
+		LTML[Xid][10]=LTML[Xid][10]-bKa3; LTML[Xid][11]=LTML[Xid][11]+bKi3;
+		LTML[Xid][12]=LTML[Xid][12]-bKa4; LTML[Xid][13]=LTML[Xid][13]+bKi4;
+        LTML[Xid][14]=LTML[Xid][14]-bKa5; LTML[Xid][15]=LTML[Xid][15]+bKi5;
+	    LTML[Xid][16]=LTML[Xid][16]-bKa6; LTML[Xid][17]=LTML[Xid][17]+bKi6;
+		
+		LTML2[Xid][0]=LTML2[Xid][0]-bKa1; LTML2[Xid][1]=LTML2[Xid][1]+bKi1;
+		LTML2[Xid][8]=LTML2[Xid][8]-bKa2; LTML2[Xid][9]=LTML2[Xid][9]+bKi2;
+		LTML2[Xid][10]=LTML2[Xid][10]-bKa3; LTML2[Xid][11]=LTML2[Xid][11]+bKi3;
+		LTML2[Xid][12]=LTML2[Xid][12]-bKa4; LTML2[Xid][13]=LTML2[Xid][13]+bKi4;
+        LTML2[Xid][14]=LTML2[Xid][14]-bKa5; LTML2[Xid][15]=LTML2[Xid][15]+bKi5;
+	    LTML2[Xid][16]=LTML2[Xid][16]-bKa6; LTML2[Xid][17]=LTML2[Xid][17]+bKi6;
+		
+		LTMR[Xid][0]=LTMR[Xid][0]-bKa1; LTMR[Xid][1]=LTMR[Xid][1]+bKi1;
+		LTMR[Xid][8]=LTMR[Xid][8]-bKa2; LTMR[Xid][9]=LTMR[Xid][9]+bKi2;
+		LTMR[Xid][10]=LTMR[Xid][10]-bKa3; LTMR[Xid][11]=LTMR[Xid][11]+bKi3;
+		LTMR[Xid][12]=LTMR[Xid][12]-bKa4; LTMR[Xid][13]=LTMR[Xid][13]+bKi4;
+        LTMR[Xid][14]=LTMR[Xid][14]-bKa5; LTMR[Xid][15]=LTMR[Xid][15]+bKi5;
+	    LTMR[Xid][16]=LTMR[Xid][16]-bKa6; LTMR[Xid][17]=LTMR[Xid][17]+bKi6;
+
+		LTMR2[Xid][0]=LTMR2[Xid][0]-bKa1; LTMR2[Xid][1]=LTMR2[Xid][1]+bKi1;
+		LTMR2[Xid][8]=LTMR2[Xid][8]-bKa2; LTMR2[Xid][9]=LTMR2[Xid][9]+bKi2;
+		LTMR2[Xid][10]=LTMR2[Xid][10]-bKa3; LTMR2[Xid][11]=LTMR2[Xid][11]+bKi3;
+		LTMR2[Xid][12]=LTMR2[Xid][12]-bKa4; LTMR2[Xid][13]=LTMR2[Xid][13]+bKi4;
+        LTMR2[Xid][14]=LTMR2[Xid][14]-bKa5; LTMR2[Xid][15]=LTMR2[Xid][15]+bKi5;
+	    LTMR2[Xid][16]=LTMR2[Xid][16]-bKa6; LTMR2[Xid][17]=LTMR2[Xid][17]+bKi6;
+
+		
+		}
+	bKa1=0;
+	bKa2=0;
+	bKa3=0;
+	bKa4=0;
+	bKa5=0;
+	bKa6=0;
+	bKi1=0;
+	bKi2=0;
+	bKi3=0;
+	bKi4=0;
+	bKi5=0;
+	bKi6=0;
+}
+
+
+void reset_parameterputar_kanan()
+{
+        //********************   SET ALL ARRAY   *********************// 
+
+        for ( int Xid = 0; Xid < 7 ; Xid++)
+        {
+		RTML[Xid][0]=RTML[Xid][0]-bKa1; RTML[Xid][1]=RTML[Xid][1]+bKi1;
+		RTML[Xid][8]=RTML[Xid][8]-bKa2; RTML[Xid][9]=RTML[Xid][9]+bKi2;
+		RTML[Xid][10]=RTML[Xid][10]-bKa3; RTML[Xid][11]=RTML[Xid][11]+bKi3;
+		RTML[Xid][12]=RTML[Xid][12]-bKa4; RTML[Xid][13]=RTML[Xid][13]+bKi4;
+        RTML[Xid][14]=RTML[Xid][14]-bKa5; RTML[Xid][15]=RTML[Xid][15]+bKi5;
+	    RTML[Xid][16]=RTML[Xid][16]-bKa6; RTML[Xid][17]=RTML[Xid][17]+bKi6;
+		
+		RTML2[Xid][0]=RTML2[Xid][0]-bKa1; RTML2[Xid][1]=RTML2[Xid][1]+bKi1;
+		RTML2[Xid][8]=RTML2[Xid][8]-bKa2; RTML2[Xid][9]=RTML2[Xid][9]+bKi2;
+		RTML2[Xid][10]=RTML2[Xid][10]-bKa3; RTML2[Xid][11]=RTML2[Xid][11]+bKi3;
+		RTML2[Xid][12]=RTML2[Xid][12]-bKa4; RTML2[Xid][13]=RTML2[Xid][13]+bKi4;
+        RTML2[Xid][14]=RTML2[Xid][14]-bKa5; RTML2[Xid][15]=RTML2[Xid][15]+bKi5;
+	    RTML2[Xid][16]=RTML2[Xid][16]-bKa6; RTML2[Xid][17]=RTML2[Xid][17]+bKi6;
+		
+		RTMR[Xid][0]=RTMR[Xid][0]-bKa1; RTMR[Xid][1]=RTMR[Xid][1]+bKi1;
+		RTMR[Xid][8]=RTMR[Xid][8]-bKa2; RTMR[Xid][9]=RTMR[Xid][9]+bKi2;
+		RTMR[Xid][10]=RTMR[Xid][10]-bKa3; RTMR[Xid][11]=RTMR[Xid][11]+bKi3;
+		RTMR[Xid][12]=RTMR[Xid][12]-bKa4; RTMR[Xid][13]=RTMR[Xid][13]+bKi4;
+        RTMR[Xid][14]=RTMR[Xid][14]-bKa5; RTMR[Xid][15]=RTMR[Xid][15]+bKi5;
+	    RTMR[Xid][16]=RTMR[Xid][16]-bKa6; RTMR[Xid][17]=RTMR[Xid][17]+bKi6;
+	
+		RTMR2[Xid][0]=RTMR2[Xid][0]-bKa1; RTMR2[Xid][1]=RTMR2[Xid][1]+bKi1;
+		RTMR2[Xid][8]=RTMR2[Xid][8]-bKa2; RTMR2[Xid][9]=RTMR2[Xid][9]+bKi2;
+		RTMR2[Xid][10]=RTMR2[Xid][10]-bKa3; RTMR2[Xid][11]=RTMR2[Xid][11]+bKi3;
+		RTMR2[Xid][12]=RTMR2[Xid][12]-bKa4; RTMR2[Xid][13]=RTMR2[Xid][13]+bKi4;
+        RTMR2[Xid][14]=RTMR2[Xid][14]-bKa5; RTMR2[Xid][15]=RTMR2[Xid][15]+bKi5;
+	    RTMR2[Xid][16]=RTMR2[Xid][16]-bKa6; RTMR2[Xid][17]=RTMR2[Xid][17]+bKi6;		
+		}
+	bKa1=0;
+	bKa2=0;
+	bKa3=0;
+	bKa4=0;
+	bKa5=0;
+	bKa6=0;
+	bKi1=0;
+	bKi2=0;
+	bKi3=0;
+	bKi4=0;
+	bKi5=0;
+	bKi6=0;
+}
+
+///////////////////////////////////////tuning end here//////////////////////////////////
+
+/////////////////////////////////////////HEAD///////////////////////////////////////////
+void search(int delay,bool status){
+	dxl_write_word(idh[1],P_GOAL_POSITION,searchingY[0]);
+	
+	sleep(1);
+	
+	for(int i=0;i<9;i++){dxl_write_word(idh[0],P_GOAL_POSITION,searchingX[i]); usleep(delay);}
+	
+	dxl_write_word(idh[1],P_GOAL_POSITION,searchingY[1]);
+	
+        for(int i=8;i>=0;i--){dxl_write_word(idh[0],P_GOAL_POSITION,searchingX[i]); usleep(delay);}
+
+//        dxl_write_word(idh[0],P_GOAL_POSITION,512);
+//        dxl_write_word(idh[1],P_GOAL_POSITION,512);
+
+}
+
+/////////////////////////////////void gerak start here /////////////////////////////////////////////////////////////////////
+void siapJalan(bool status,int speed)
+{
+	//ELP_SyncHead(Xpos,Ypos,Active);
+ 	//set_siap_jalan(-70,-70,-7,-7,-10,-10,0,0,0,0,0,0);
+ 	//set_siap_jalan(0,0,0,0,27,0,0,0,0,0,0,0);
+//	stabil=false;
+//	while (!stabil){
+	setAllSpeed(150+speed);
+	set_siap_jalan(-50,-50,-7,-7,-10,-10,0,0,0,0,0,0);
+	//pid();
+//	set_siap_jalan(0,0,0,-20,0,0,0,0,0,0,0,0);
+//	PID(174.3,275.4,1,0);
+	kirimPacketGerak(18,1,1,id,walkReady,status,0);
+	//set_siap_jalan(0,0,0,0,-27,0,0,0,0,0,0,0);
+	set_siap_jalan(50,50,7,7,10,10,0,0,0,0,0,0);
+//	}
+}
+
+void siapJalan2(bool status,int speed,int paha)
+{
+        //ELP_SyncHead(Xpos,Ypos,Active);
+        //set_siap_jalan(-70,-70,-7,-7,-10,-10,0,0,0,0,0,0);
+        //set_siap_jalan(0,0,0,0,27,0,0,0,0,0,0,0);
+//      stabil=false;
+//      while (!stabil){
+        //setAllSpeed(150+speed);
+	//reset_siap_jalan();
+	set_siap_jalan(-50,-50,-25,-25,-6,-6,0,0,-10,-10,0,0);
+        //pid();
+//      set_siap_jalan(0,0,0,-20,0,0,0,0,0,0,0,0);
+//      PID(174.3,275.4,1,0);
+	dxl_write_word(12,32,paha);
+        dxl_write_word(13,32,paha);
+        kirimPacketGerak(18,1,1,id,walkReady,status,0);
+        //set_siap_jalan(0,0,0,0,-27,0,0,0,0,0,0,0);
+	  set_siap_jalan(50,50,25,25,6,6,0,0,-10,-10,0,0);
+//      }
+}
+
+
+/*void razi_shoot()
+{
+ ELP_SyncHead(512,350,1);
+        for ( int Xid =0; Xid <17 ; Xid++)
+        {
+                setAllSpeed(512);
+                ELP_SyncMove(razishoot[Xid],1);
+                usleep(razishoot_delay[Xid]);
+                printf("array ke = %d \n", Xid);
+        }
+// siapJalan();
+        usleep(300000);
+}v*/
+// siapJalan();
+
+
+
+/*void siapJalan()
+{
+	//ELP_SyncHead(Xpos,Ypos,Active);
+ //	set_siap_jalan(-70,-70,-7,-7,-10,-10,0,0,0,0,0,0);
+ //	set_siap_jalan(-30,-30,-7,-7,-20,-20,0,0,0,0,0,0);
+	set_siap_jalan(50,50,-7,-7,-10,-10,0,0,0,0,0,0);
+	ELP_SyncMove(walkReady,1);
+	set_siap_jalan(-50,-50,7,7,10,10,0,0,0,0,0,0);
+	stabil=false;
+	while (!stabil){
+	PID(174.3,275.4,1,0);
+}
+
+	printf ("ACCclear! \n");
+//	set_siap_jalan(30,30,7,7,20,20,0,0,0,0,0,0);
+//	set_siap_jalan(70,70,7,7,10,10,0,0,0,0,0,0);
+
+}*/
+
+/*void Rshoot()
+{
+        //ELP_SyncHead(Xpos,Ypos,Active);
+        for ( int Xid =0; Xid <5 ; Xid++)
+        {
+                ELP_setSpeedArray(speed_tendang_kanan[Xid]);
+                ELP_SyncMove(tendang_kanan[Xid],1);
+                usleep(delay_tendang[Xid]);
+                printf("array ke = %d \n", Xid);
+        }
+	siapJalan();
+	usleep(2000000);
+}v*/
+
+/*void Lshoot()
+{
+        //ELP_SyncHead(512,350,1);
+        for ( int Xid =0; Xid < 6 ; Xid++)
+        {
+		setAllSpeed(speed_tendang[Xid]);
+                ELP_SyncMove(tendang_kiri[Xid],1);
+                usleep(delaytendang[Xid]);
+		printf("array ke = %d \n", Xid);
+        }
+	//siapJalan();
+	//usleep(2000000);
+}
+*/
+
+/*void jalan1(int speed, int delayKu)
+{
+	siapJalan();
+	//set_parameterjalan(0,0,10,10,15,15,0,0,10,10,0,0);
+	setAllSpeed(speed);
+    for ( int Xid = 0; Xid < 7 ; Xid++)
+	{
+		ELP_SyncMove(FSL[Xid],1);
+		usleep (delayKu);
+	}
+
+	for ( int Xid = 0; Xid < 7 ; Xid++)
+        {
+		ELP_SyncMove(FSL2[Xid],1);
+		usleep (delayKu);
+        }
+	//reset_parameter_jalan();	
+	}v*/
+
+void jalan2(int speed, int delayku)
+{
+	//set_siap_jalan(-15,-15,0,0,-15,-15,0,0,0,0,0,0);
+	//siapJalan();
+        //vELP_SyncHead(512,512,1);
+//	usleep	(10000000);
+//	set_parameterjalan(0,0,0,0,20,20,0,0,0,0,0,0);
+	//set_parameterjalan(-100,-100,-20,-20,0,0,0,0,0,0,0,0);
+	setAllSpeed(speed);
+	kirimPacketGerak(18,7,1,id,FMR,1,delayku);
+	
+//	usleep	(4000000);
+
+	kirimPacketGerak(18,7,1,id,FMR2,1,delayku);
+
+//	usleep	(4000000);
+	
+	kirimPacketGerak(18,7,1,id,FML,1,5000);
+
+	
+//	usleep	(4000000);
+/*
+	for ( int Xid = 0; Xid < 6 ; Xid++)
+	{
+		ELP_SyncMove(FML2[Xid],1);
+		usleep (delayKu);
+	}
+*/
+	//usleep	(1000000);
+	//PID();
+	kirimPacketGerak(18,7,6,id,FML2,1,0);
+//	reset_parameter_jalan();
+	//usleep(10000);
+//	siapJalan();
+	//set_siap_jalan(15,15,0,0,15,15,0,0,0,0,0,0);
+//	set_parameterjalan(0,0,0,0,-20,-20,0,0,0,0,0,0);
+	//set_parameterjalan(100,100,20,20,0,0,0,0,0,0,0,0);
+	//resetStabilizer(2);
+
+}
+
+/*void jalan3(int speed, int delayKu)
+{
+	siapJalan();
+	//set_parameterjalan(0,0,10,10,15,15,0,0,10,10,0,0);
+	for ( int Xid = 0; Xid < 7 ; Xid++)
+	{
+		ELP_SyncMove(FER[Xid],1);
+		usleep (delayKu);
+	}
+
+        for ( int Xid = 0; Xid < 7 ; Xid++)
+       	{
+		ELP_SyncMove(FER2[Xid],1);
+		usleep (delayKu);
+	}
+	//reset_parameter_jalan();
+}v*/
+
+void geser_kanan(int delayku)
+{
+	siapJalan(1,0);
+	//set_parametergeser_kanan(0,0,0,0,0,0,0,0,0,0,0,0);
+		
+	kirimPacketGerak(18,7,1,id,GSR_R,1,GSR_R_DLY,GSR_R_SPD);
+/*	///usleep (delayKu);
+
+	kirimPacketGerak(18,7,1,id,RMR2,1,delayku);
+	//usleep (delayKu);
+
+	kirimPacketGerak(18,7,1,id,RML,1,delayku);
+	//usleep (delayKu);
+
+	kirimPacketGerak(18,7,1,id,RML2,1,2*delayku);
+	//usleep (delayKu);
+	//usleep (delayKu);
+	//reset_parametergeser_kanan(); */
+}
+
+void geser_kiri(int delayku)
+{
+	siapJalan(1,0);
+	//set_parametergeser_kiri(0,0,0,0,0,0,0,0,0,0,0,0);
+	//setAllSpeed(100);
+	 kirimPacketGerak(18,7,1,id,GSR_R,1,GSR_L_DLY,GSR_L_SPD);
+
+/*		kirimPacketGerak(18,7,1,id,LML,1,delayku);
+		//usleep (delayKu);
+
+		kirimPacketGerak(18,7,1,id,LML2,1,delayku);
+		//usleep (delayKu);
+
+
+	//setAllSpeed(150);
+		kirimPacketGerak(18,7,1,id,LMR,1,delayku);
+		//usleep (delayKu);
+
+		kirimPacketGerak(18,7,1,id,LMR2,1,delayku);
+		//usleep (delayKu);
+	//reset_parametergeser_kiri(); */
+}
+
+void putar_kanan(int delayku)
+{
+	siapJalan(1,0);
+	set_parameterputar_kanan(0,0,0,0,25,25,25,25,0,0,0,0);
+	//set_parameterputar_kanan(-110,-110,0,0,0,0,10,10,0,0,0,0);
+        //ELP_SyncHead(512,serY,1);v
+	setAllSpeed(160);
+	kirimPacketGerak(18,7,1,id,RTMR,1,40000);
+		//usleep (delayKu);
+	kirimPacketGerak(18,7,1,id,RTMR2,1,40000);
+		//usleep (delayKu);
+
+	kirimPacketGerak(18,7,1,id,RTML,1,40000);
+		//usleep (delayKu);
+		//setAllSpeed(250);
+	kirimPacketGerak(18,7,1,id,RTML2,1,0);
+		//usleep (delayKu);
+	//reset_parameterputar_kanan();
+	set_parameterputar_kanan(0,0,0,0,-25,-25,-25,-25,0,0,0,0);
+//	set_parameterputar_kanan(75,75,0,0,0,0,0,0,0,0,0,0);
+	siapJalan(1,0);
+}
+
+void putar_kiri(int delayku)
+{
+	siapJalan(1,0);
+	set_parameterputar_kiri(0,0,0,0,20,20,25,25,0,0,0,0);
+        //ELP_SyncHead(512,serY,1);
+	setAllSpeed(160);
+		
+	kirimPacketGerak(18,7,1,id,LTML,1,40000);
+	//usleep(delayku);
+
+
+	kirimPacketGerak(18,7,1,id,LTML2,1,40000);
+	//usleep (delayKu);
+
+	kirimPacketGerak(18,7,1,id,LTMR,1,40000);
+	//usleep (delayKu);
+	
+	kirimPacketGerak(18,7,1,id,LTMR2,1,0);
+	//usleep (delayKu);
+
+	//reset_parameterputar_kiri();
+	set_parameterputar_kiri(0,0,0,0,-20,-20,-25,-25,0,0,0,0);
+	siapJalan(1,0);
+}
+
+//void tendangan razi
+void Lshoot()
+{
+        //ELP_SyncHead(512,512,1);
+         kirimPacketGerak(18,12,1,id,tendang_kiri,1,delaytendang,speed_tendang);
+        //printf("array ke = %d \n", Xid);
+        //siapJalan();
+        //usleep(2000000);
+}
+//void tendangan razi end here //
+
+
+/*void duduk()
+{
+	ELP_SyncMove(SIT_DOWN,1);
+}v*/
+
+
+
+void bangun_belakang1()
+{
+printf ("gw sedang bangun belakang bro");
+	siapJalan(1,0);
+	//set speed
+	dxl_write_word(BROADCAST_ID,32,speed_UP_B[0]);
+	kirimPacketGerak(18,1,1,id,UP_B,1,0);
+	usleep (delay_UP_B[0]);
+
+	//set head servo speed
+	dxl_write_word(31,32,0);
+	dxl_write_word(32,32,0);
+}
+void bangun_belakang2()
+{
+	siapJalan(1,0);
+	kirimPacketGerak(18,3,2,id,UP_B,1,speed_UP_B,delay_UP_B);
+
+	dxl_write_word(31,32,0);
+	dxl_write_word(32,32,0);
+}
+void bangun_belakang3()
+{
+	siapJalan(1,0);
+	kirimPacketGerak(18,27,4,id,UP_B,1,delay_UP_B,speed_UP_B);
+
+	dxl_write_word(31,32,0);
+	dxl_write_word(32,32,0);
+}
+
+/*void ELP_StatReturnSet(int level)
+{
+	if (level<3) {dxl_write_word(BROADCAST_ID, 16, level);}
+}v*/
+
+
+/*void spin_kanan(int delayKu)
+{
+	siapJalan();
+	geser_kanan(delayKu);
+	geser_kanan(delayKu);
+	siapJalan();
+	usleep(100000);
+	putar_kiri(delayKu);
+	putar_kiri(delayKu);
+	siapJalan();
+	usleep(100000);
+}v*/
+
+/*void spin_kiri(int delayKu)
+{
+	siapJalan();
+	geser_kiri(delayKu);
+	geser_kiri(delayKu);
+	siapJalan();
+	usleep(100000);
+	putar_kanan(delayKu);
+	putar_kanan(delayKu);
+	siapJalan();
+	usleep(100000);
+
+
+}v*/
+
+//--------------------------------------------TEST------------------------------------
+
+void TendangMaret2015()
+{
+// ELP_SyncHead(512,350,1);
+//        setAllSpeed(0);
+        kirimPacketGerak(18,18,1,id,Array_TendangMaret2015,1,Delay_TendangMaret2015,Speed_TendangMaret2015);
+// siapJalan();
+        usleep(300000);
+}
+
+void bangun_depan_laststep()
+{
+
+        dxl_write_word(1,32,200);
+		dxl_write_word(2,32,200);
+		dxl_write_word(3,32,200);
+		dxl_write_word(4,32,200);
+		dxl_write_word(5,32,200);
+		dxl_write_word(6,32,200);
+		dxl_write_word(7,32,200);
+		dxl_write_word(8,32,200);
+		dxl_write_word(9,32,200);
+		dxl_write_word(10,32,200);
+		dxl_write_word(11,32,200);
+		dxl_write_word(12,32,200);
+		dxl_write_word(13,32,180);
+		dxl_write_word(14,32,180);
+		dxl_write_word(15,32,140);
+		dxl_write_word(16,32,140);
+		dxl_write_word(17,32,180);
+		dxl_write_word(18,32,180);
+	//dxl_write_word(BROADCAST_ID,32,200);		
+        kirimPacketGerak(18,1,1,id,UP_F_LAST_STEP,1,0);
+        usleep (delay_UP_F_LAST_STEP[0]);
+	dxl_write_word(3,24,0);
+	dxl_write_word(4,24,0);
+	dxl_write_word(5,24,0);
+	dxl_write_word(6,24,0);
+	usleep(2000000);
+}
+
+void bangun_depan()
+{
+	//ELP_SyncHead(512,512,0);
+	siapJalan(1,0);
+	kirimPacketGerak(18,11,1,id,UP_F,1,delay_UP_F,speed_UP_F);
+	bangun_depan_laststep();
+	dxl_write_word(1,32,100);
+	dxl_write_word(2,32,100);	
+	dxl_write_word(11,32,100);
+	dxl_write_word(12,32,100);
+	dxl_write_word(13,32,50);
+	dxl_write_word(14,32,50);
+	dxl_write_word(15,32,50);
+	dxl_write_word(16,32,50);
+	usleep(50000);
+	kirimPacketGerak(18,1,1,id,UP_F_LAST_STEP2,1,0);
+	
+	//siapJalan(1,-50);
+	sleep(2);
+//	ELP_SyncMove(STANDUP_2,1);
+}
+
+/*void bangun_belakang_laststep()
+{
+
+        for (int Xid=0; Xid<1; Xid++)
+	{
+        dxl_write_word(1,32,220);
+		dxl_write_word(2,32,220);
+		dxl_write_word(3,32,200);
+		dxl_write_word(4,32,200);
+		dxl_write_word(5,32,200);
+		dxl_write_word(6,32,200);
+		dxl_write_word(7,32,200);
+		dxl_write_word(8,32,200);
+		dxl_write_word(9,32,200);
+		dxl_write_word(10,32,200);
+		dxl_write_word(11,32,200);
+		dxl_write_word(12,32,200);
+		dxl_write_word(13,32,200);
+		dxl_write_word(14,32,200);
+		dxl_write_word(15,32,160);
+		dxl_write_word(16,32,160);
+		dxl_write_word(17,32,200);
+		dxl_write_word(18,32,200);
+	//dxl_write_word(BROADCAST_ID,32,200);		
+        ELP_SyncMove(UP_B_LAST_STEP[Xid],1);
+        usleep (delay_UP_B_LAST_STEP[Xid]);
+	dxl_write_word(3,24,0);
+	dxl_write_word(4,24,0);
+	dxl_write_word(5,24,0);
+	dxl_write_word(6,24,0);
+	usleep(2000000);
+        }
+
+}v*/
+
+/*void bangun_belakang1()
+{
+	siapJalan();
+	ELP_SyncHead(512,512,0);
+	dxl_write_word(BROADCAST_ID,32,speed_UP_B[0]);
+	ELP_SyncMove(UP_B[0],1);
+	printf("array ke = 1 \n");
+	usleep (delay_UP_B[0]);
+	//set head servo speed
+//	dxl_write_word(31,32,0);
+//	dxl_write_word(32,32,0);
+	dxl_write_word(19,32,0);
+	dxl_write_word(20,32,0);
+}v*/
+
+/*void bangun_belakang2()
+{
+	siapJalan();
+	for (int Xid=1; Xid<3; Xid++)
+	{
+	dxl_write_word(BROADCAST_ID,32,speed_UP_B[Xid]);
+	ELP_SyncMove(UP_B[Xid],1);
+	printf("array ke = %d \n",Xid+1);
+	//usleep(100000);
+	usleep (delay_UP_B[Xid]);
+	}
+
+//	dxl_write_word(31,32,0);
+//	dxl_write_word(32,32,0);
+	dxl_write_word(19,32,0);
+	dxl_write_word(20,32,0);
+}v*/
+
+/*void bangun_belakang3()
+{
+//	siapJalan();
+	for (int Xid=3; Xid<26; Xid++)
+	{
+	dxl_write_word(BROADCAST_ID,32,speed_UP_B[Xid]);
+	ELP_SyncMove(UP_B[Xid],1);
+	printf("array ke = %d \n",Xid+1); 
+//	usleep(1000000);
+//	siapJalan();
+//	usleep(1000000);
+	usleep (delay_UP_B[Xid]);
+
+//	siapJalan();
+//	usleep(10000000);
+	
+	}
+	bangun_belakang_laststep();
+//	dxl_write_word(31,32,0);
+//	dxl_write_word(32,32,0);
+}v*/
+
+//-----------------------------------END-TEST-------------------------------------------------
+
+//////////////////////////////////////////////////void gerak end here //////////////////////////////////////////////////////////////////////////
+/*int movements() //movements()
+//int main()
+ {
+	ELP_initialize(0,1); //PORT=ttyUSB0 Baud=1Mbps
+	ELP_StatReturnSet(0); //0 for no return, 1 for read only, 2 for return all
+	setAllSpeed(100);
+	ELP_SyncHead(512,200,0);
+	ELP_SyncMove(SIT_1,1);
+	return 0;}v*/
+//	set_parameterjalan(0,0,0,0,150,150,300,300,-150,-150,0,0);
+//	set_siap_jalan(0,0,0,0,-20,-20,0,0,0,0,0,0);
+//	set_parameterjalan(0,0,10,10,15,15,0,0,10,10,0,0);
+/*
+while (1)
+{
+printf("a /n");
+//jalan3(150,100000);
+//sset_parameterjalan(0,0,0,0,-20,-20,0,0,0,0,0,0);
+//jalan2(150,50000); //150,50000
+//usleep(1500000);
+///sset_parameterjalan(0,0,0,0,-20,-20,0,0,0,0,0,0);
+//putar_kiri(30000);  //bongkokin badan kedepan
+//putar_kanan(30000); //bongkokin badan kedepan delay tambah
+//geser_kiri(50000); // pergerakan kacau
+//geser_kanan(30000);// sama sama ancurnya
+//Rshoot();
+
+//cheked
+//bangun_belakang1();
+//bangun_belakang2();
+//bangun_belakang3(); //error step terakhir
+bangun_depan(); //step terakhir eror
+//printf("a /n");
+usleep(200000);
+
+}
+
+return 0;
+*/
+
+#endif
