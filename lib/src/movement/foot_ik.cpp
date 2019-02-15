@@ -23,12 +23,6 @@ void Joint::setParam(double x, double y, double z, double sudutX, double sudutY,
 void Joint::setParam(joint_param newParam){
 	param=newParam;
 }
-inline Joint::joint_param Joint::getParam(){
-	return param;
-}
-inline void Joint::getParam(joint_param &p){
-	p=param;
-}
 //definition for Invers Kinematics class
 IK::IK(){
 	IK::setParam(0,0,0);
@@ -43,12 +37,6 @@ void IK::setParam(double teta, double d_teta, int Speed){
 }
 void IK::setParam(ik_param newParam){
 	param=newParam;
-}
-inline IK::ik_param IK::getParam(){
-	return param;
-}
-inline void IK::getParam(ik_param &p){
-	p=param;
 }
 int IK::cek_move(){
 	int moving=0;

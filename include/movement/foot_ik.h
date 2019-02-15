@@ -56,6 +56,20 @@ class IK{
         ik_param param;
 
 };
+
+inline IK::ik_param IK::getParam(){
+	return param;
+}
+inline void IK::getParam(ik_param &p){
+	p=param;
+}
+inline Joint::joint_param Joint::getParam(){
+	return param;
+}
+inline void Joint::getParam(joint_param &p){
+	p=param;
+}
+
 extern int x_head,y_head;
 extern double f2;
 
