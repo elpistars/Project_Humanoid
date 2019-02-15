@@ -23,7 +23,7 @@ void Joint::setParam(double x, double y, double z, double sudutX, double sudutY,
 void Joint::setParam(joint_param newParam){
 	param=newParam;
 }
-Joint::joint_param Joint::getParam(){
+inline Joint::joint_param Joint::getParam(){
 	return param;
 }
 inline void Joint::getParam(joint_param &p){

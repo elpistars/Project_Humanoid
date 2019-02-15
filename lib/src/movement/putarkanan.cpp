@@ -13,9 +13,8 @@ void putarkanan(){
 	Joint Kanan,Kiri;
 	Joint::joint_param temp_joint[2];
 	IK Invers; 
-	
-	
-	
+	x_head=512;	
+	y_head=512;
 	Kanan.setParam(-12.4, 0, 0.3, 0, 22, 0);//x,y,z,sudutX,sudutY,sudutZ
 	Kiri.setParam(-12, 0, 0, 0, 22, 0);//x,y,z,sudutX,sudutY,sudutZ;
 	
@@ -30,8 +29,8 @@ void putarkanan(){
 	// MIRING //
 	f2=0;
 	Invers.setParam(90,0.1,200); // max_sudut, inc_sudut, speed
-	while(f2<=Invers::param.sudut){
-		f2+=Invers::param.inc_sudut;
+	while(f2<=Invers.param.sudut){
+		f2+=Invers.param.inc_sudut;
         
 		Kanan.setParam(temp_joint[0].x, 			//x -12.4
 		 temp_joint[0].y + 2*sin(f2*3.14/180),  	//y 2
@@ -49,7 +48,7 @@ void putarkanan(){
 		temp_joint[1].sudutZ 						// 0
 		);
 
-		Invers.inverseAndre(Kanan.getParam(),Kiri.getParam(),Invers::param.speed,512,512,480,520,270,750,250,750,x_head,y_head);
+		Invers.inverseAndre(Kanan.getParam(),Kiri.getParam(),Invers.param.speed,512,512,480,520,270,750,250,750,x_head,y_head);
 	}
 
 	//update nilai temp_joint
@@ -60,8 +59,8 @@ void putarkanan(){
 	usleep(1000);
 // ------------------  ANKAT KAKI DAN MENDARAT //
 	Invers.setParam(90,0.08,200);
-	while(f2<=Invers::param.sudut){
-		f2+=Invers::param.inc_sudut;
+	while(f2<=Invers.param.sudut){
+		f2+=Invers.param.inc_sudut;
 		
 		Kanan.setParam(temp_joint[0].x+5*sin(f2*3.14/180),		// -7.4
 		temp_joint[0].y - 1* sin(f2*3.14/180),					// 1
@@ -73,13 +72,13 @@ void putarkanan(){
 
 		Kiri.setParam(temp_joint[1].x + 5*sin(f2*3.14/180),		// -7
 		temp_joint[1].y - 1*sin(f2*3.14/180),					// 1
-		temp_joint[1].z											// 0
+		temp_joint[1].z,											// 0
 		temp_joint[1].sudutX - 3*sin(f2*3.14/180),				// -5
-		temp_joint[1].sudutY									// 22
+		temp_joint[1].sudutY,									// 22
 		temp_joint[1].sudutZ + 472*sin(f2*3.14/180)				// 472
 		);
 
-		Invers.inverseAndre(Kanan.getParam(), Kiri.getParam(),Invers::param.speed,480,520,270,750,250,750,x_head,y_head);
+		Invers.inverseAndre(Kanan.getParam(), Kiri.getParam(),Invers.param.speed,512,512,480,520,270,750,250,750,x_head,y_head);
 
 	}
 
@@ -91,8 +90,8 @@ void putarkanan(){
 	usleep(5000);
 // --------------------------- BALIKIN MIRING //
 	Invers.setParam(90,0.2,200);
-	while(f2<=Invers::param.sudut){
-		f2+=Invers::param.inc_sudut;
+	while(f2<=Invers.param.sudut){
+		f2+=Invers.param.inc_sudut;
 
 		Kanan.setParam(temp_joint[0].x-5*sin(f2*3.14/180),		// -12.4
 		temp_joint[0].y*(1-sin(f2*3.14/180)),					// 0
@@ -104,13 +103,13 @@ void putarkanan(){
 
 		Kiri.setParam(temp_joint[1].x - 5*sin(f2*3.14/180),		// -12
 		temp_joint[1].y*(1-sin(f2*3.14/180)),					// 0
-		temp_joint[1].z											// 0
+		temp_joint[1].z,										// 0
 		temp_joint[1].sudutX*(1-sin(f2*3.14/180)),				// 0
-		temp_joint[1].sudutY									// 22
+		temp_joint[1].sudutY,									// 22
 		temp_joint[1].sudutZ 									// 472
 		);
 
-		Invers.inverseAndre(Kanan.getParam(), Kiri.getParam(),Invers::param.speed,480,520,270,750,250,750,x_head,y_head);
+		Invers.inverseAndre(Kanan.getParam(), Kiri.getParam(),Invers.param.speed,512,512,480,520,270,750,250,750,x_head,y_head);
 	}
 
 	//update nilai temp_joint
@@ -122,8 +121,8 @@ void putarkanan(){
 	usleep(600000);
 	f2=0;
 	Invers.setParam(90,0.2,200);
-	while(f2<=Invers::param.sudut){
-		f2+=Invers::param.inc_sudut;
+	while(f2<=Invers.param.sudut){
+		f2+=Invers.param.inc_sudut;
 		Kanan.setParam(temp_joint[0].x,							// -12.4
 		temp_joint[0].y - 2*sin(f2*3.14/180),					// -2
 		temp_joint[0].z,										// 0.3
@@ -134,13 +133,13 @@ void putarkanan(){
 
 		Kiri.setParam(temp_joint[1].x,							// -12
 		temp_joint[1].y - 2*sin(f2*3.14/180),					// -2
-		temp_joint[1].z											// 0
+		temp_joint[1].z,											// 0
 		temp_joint[1].sudutX + 2*sin(f2*3.14/180),				// 2
 		temp_joint[1].sudutY,									// 0
 		temp_joint[1].sudutZ 									// 472
 		);
 
-		Invers.inverseAndre(Kanan.getParam(),Kiri.getParam(),Invers::param.speed,480,520,270,750,250,750,x_head,y_head);
+		Invers.inverseAndre(Kanan.getParam(),Kiri.getParam(),Invers.param.speed,512,512,480,520,270,750,250,750,x_head,y_head);
 
 	}
 	usleep(5000);
@@ -152,8 +151,8 @@ void putarkanan(){
 // ------------------------ ANGKAT KAKI DAN MENDARAT/
 	f2=0;
 	Invers.setParam(90,0.2,200);
-	while(f2<=Invers::param.sudut){
-		f2=f2+Invers::param.inc_sudut;
+	while(f2<=Invers.param.sudut){
+		f2=f2+Invers.param.inc_sudut;
 		
 		Kanan.setParam(temp_joint[0].x,							// -12.4
 		temp_joint[0].y + 0.5*sin(f2*3.14/180),					// -1.5
@@ -171,7 +170,7 @@ void putarkanan(){
 		temp_joint[1].sudutZ + 40*sin(f2*3.14/180) 				// 512
 		);
 		
-		Invers.inverseAndre(Kanan.getParam(),Kiri.getParam(),Invers::param.speed,480,520,270,750,250,750,x_head,y_head);
+		Invers.inverseAndre(Kanan.getParam(),Kiri.getParam(),Invers.param.speed,512,512,480,520,270,750,250,750,x_head,y_head);
 	}
 	usleep(5000);
 
@@ -182,8 +181,8 @@ void putarkanan(){
 	// BALIKIN MIRING//
 	f2=0;
 	Invers.setParam(90,0.2,200);
-	while(f2<=Invers::param.sudut){
-		f2=f2+Invers::param.inc_sudut;
+	while(f2<=Invers.param.sudut){
+		f2=f2+Invers.param.inc_sudut;
 		
 		Kanan.setParam(temp_joint[0].x,							// -12.4
 		temp_joint[0].y + 1*sin(f2*3.14/180),					// -0.5
@@ -201,7 +200,7 @@ void putarkanan(){
 		temp_joint[1].sudutZ					 				// 472
 		);
 
-		Invers.inverseAndre(Kanan.getParam(),Kiri.getParam(),Invers::param.speed,480,520,270,750,250,750,x_head,y_head);
+		Invers.inverseAndre(Kanan.getParam(),Kiri.getParam(),Invers.param.speed,512,512,480,520,270,750,250,750,x_head,y_head);
 	}
 	usleep(500);
 

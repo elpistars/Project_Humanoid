@@ -44,7 +44,7 @@ class IK{
         void inverseAndre( Joint::joint_param Kanan, Joint::joint_param Kiri, int speed,int no7, int no8); //just leg
         void inverseAndre( Joint::joint_param Kanan, Joint::joint_param Kiri, int speed,int no7, int no8, int x_head, int y_head);//leg and head
         void inverseAndre( Joint::joint_param Kanan, Joint::joint_param Kiri, int speed,int no7, int no8, int tk1,int tk2,int tk3,int tk4,int tk5,int tk6, int x_head, int y_head);//all body
-        void kirimPacketTorque(int totalServo, int id[], int torque);
+        void kirimPacketTorque(int totalServo, int id[], int torque); 
         void PrintErrorCode();
         void PrintCommStatus(int CommStatus);
         void setAllTorque(int torque);
@@ -57,6 +57,7 @@ class IK{
 
 };
 extern int x_head,y_head;
+extern double f2;
 
 #ifdef __cplusplus
 }
