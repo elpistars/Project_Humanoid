@@ -24,6 +24,8 @@ class Joint{
         inline void getParam(joint_param &p);
         void setParam(double x, double y, double z, double sudutX, double sudutY, double sudutZ);
         void setParam(joint_param newParam);
+        void printParam();
+        
     private:
         joint_param param;
 };
@@ -53,21 +55,21 @@ class IK{
         void setParam(ik_param newParam);
         inline IK::ik_param getParam();
         inline void getParam(ik_param &p);
+        void printParam();
         ik_param param;
 
 };
-
 inline IK::ik_param IK::getParam(){
-	return param;
+	return this->param;
 }
 inline void IK::getParam(ik_param &p){
-	p=param;
+	p=this->param;
 }
 inline Joint::joint_param Joint::getParam(){
-	return param;
+	return this->param;
 }
 inline void Joint::getParam(joint_param &p){
-	p=param;
+	p=this->param;
 }
 
 extern int x_head,y_head;

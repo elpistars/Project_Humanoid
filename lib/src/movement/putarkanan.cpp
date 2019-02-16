@@ -13,8 +13,9 @@ void putarkanan(){
 	Joint Kanan,Kiri;
 	Joint::joint_param temp_joint[2];
 	IK Invers; 
-	x_head=512;	
-	y_head=512;
+	int x_head=512;	
+	int y_head=512;
+	double f2=0;
 	Kanan.setParam(-12.4, 0, 0.3, 0, 22, 0);//x,y,z,sudutX,sudutY,sudutZ
 	Kiri.setParam(-12, 0, 0, 0, 22, 0);//x,y,z,sudutX,sudutY,sudutZ;
 	
@@ -47,10 +48,12 @@ void putarkanan(){
 		temp_joint[1].sudutY, 						// 22
 		temp_joint[1].sudutZ 						// 0
 		);
-
+		Kanan.printParam();
+		Kiri.printParam();
 		Invers.inverseAndre(Kanan.getParam(),Kiri.getParam(),Invers.param.speed,512,512,480,520,270,750,250,750,x_head,y_head);
 	}
 
+	cout<<endl<<endl;
 	//update nilai temp_joint
 	temp_joint[0]=Kanan.getParam();
 	temp_joint[1]=Kiri.getParam();
@@ -77,11 +80,14 @@ void putarkanan(){
 		temp_joint[1].sudutY,									// 22
 		temp_joint[1].sudutZ + 472*sin(f2*3.14/180)				// 472
 		);
+		Kanan.printParam();
+		Kiri.printParam();
 
 		Invers.inverseAndre(Kanan.getParam(), Kiri.getParam(),Invers.param.speed,512,512,480,520,270,750,250,750,x_head,y_head);
 
 	}
 
+	cout<<endl<<endl;
 	//update nilai temp_joint
 	temp_joint[0]=Kanan.getParam();
 	temp_joint[1]=Kiri.getParam();
@@ -109,8 +115,13 @@ void putarkanan(){
 		temp_joint[1].sudutZ 									// 472
 		);
 
+		Kanan.printParam();
+		Kiri.printParam();
+
 		Invers.inverseAndre(Kanan.getParam(), Kiri.getParam(),Invers.param.speed,512,512,480,520,270,750,250,750,x_head,y_head);
 	}
+
+	cout<<endl<<endl;
 
 	//update nilai temp_joint
 	temp_joint[0]=Kanan.getParam();
@@ -139,10 +150,15 @@ void putarkanan(){
 		temp_joint[1].sudutZ 									// 472
 		);
 
+		Kanan.printParam();
+		Kiri.printParam();
+
 		Invers.inverseAndre(Kanan.getParam(),Kiri.getParam(),Invers.param.speed,512,512,480,520,270,750,250,750,x_head,y_head);
 
 	}
 	usleep(5000);
+
+	cout<<endl<<endl;
 
 	//update nilai temp_joint
 	temp_joint[0]=Kanan.getParam();
@@ -169,10 +185,15 @@ void putarkanan(){
 		temp_joint[1].sudutY,									// 0
 		temp_joint[1].sudutZ + 40*sin(f2*3.14/180) 				// 512
 		);
-		
+
+		Kanan.printParam();
+		Kiri.printParam();
+
 		Invers.inverseAndre(Kanan.getParam(),Kiri.getParam(),Invers.param.speed,512,512,480,520,270,750,250,750,x_head,y_head);
 	}
 	usleep(5000);
+
+	cout<<endl<<endl;
 
 	//update nilai temp_joint
 	temp_joint[0]=Kanan.getParam();
@@ -199,6 +220,9 @@ void putarkanan(){
 		temp_joint[1].sudutY,									// 0
 		temp_joint[1].sudutZ					 				// 472
 		);
+
+		Kanan.printParam();
+		Kiri.printParam();
 
 		Invers.inverseAndre(Kanan.getParam(),Kiri.getParam(),Invers.param.speed,512,512,480,520,270,750,250,750,x_head,y_head);
 	}
