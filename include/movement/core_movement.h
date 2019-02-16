@@ -3,5 +3,6 @@
 
 #include "foot_ik.h"
 #include "putarkanan.h"
+#include "berdiri.h"
 
 #endif

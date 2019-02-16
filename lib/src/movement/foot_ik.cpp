@@ -731,12 +731,14 @@ void IK::PrintCommStatus(int CommStatus) {
 void IK::setAllTorque(int torque){
 	dxl_write_word(BROADCAST_ID,34,torque);
 }
-void IK::printParam(){
-	cout<<param.inc_sudut<<endl<<param.sudut<<endl<<param.speed<<endl;
+void IK::printParam(char* label){
+	cout<<label<<endl;
+	cout<<param.inc_sudut<<"\t"<<param.sudut<<"\t"<<param.speed<<endl;
 }
-void Joint::printParam(){
-	cout<<param.x<<endl<<param.y<<endl<<param.z<<endl
-	<<param.sudutX<<endl<<param.sudutY<<endl<<param.sudutZ<<endl;
+void Joint::printParam(char* label){
+	cout<<label<<endl;
+	cout<<param.x<<"\t"<<param.y<<"\t"<<param.z<<endl
+	<<param.sudutX<<"\t"<<param.sudutY<<"\t"<<param.sudutZ<<endl;
 }
 
 #endif

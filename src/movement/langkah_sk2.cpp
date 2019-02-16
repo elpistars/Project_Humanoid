@@ -49,68 +49,6 @@ void sensen(){
 
 }
 
-
-void berdiri(){
-
-        int speed, com7, com8;
-
-
-//       com7=4;
-  //      com8=4;
-              dxl_write_word(10,26,1);
-             dxl_write_word(10,27,1);
-        dxl_write_word(9,26,1);
-        dxl_write_word(9,27,1);
-
-        //kirimPacketTorque(12,id,tor);
-        //for(int i=0;i<=11;i++){
-          dxl_write_word(10,28,4);
-          dxl_write_word(10,29,4);
-	  dxl_write_word(9,28,4);
-	  dxl_write_word(9,29,4);
-
-
-
-/*
-        cout<<"Masukkan sudut X: ";
-        cin>>sudutX;
-        cout<<"Masukkan sudut Y: ";
-        cin>>sudutY;
-        cout<<"Masukkan sudut Z: ";
-        cin>>sudutZ;
-
-        cout<<"Masukkan X: ";
-a        cin>>x;
-        cout<<"Masukkan Y: ";
-        cin>>y;
-        cout<<"Masukkan Z: ";
-        cin>>z;*/
-        r_ik.x=-12.4;// tinggi kaki kanan //-13.4
-        r_ik.y=0;// miring kaki
-        r_ik.z=0.5;// langkah kaki	//0.3
-
-        r_ik.sudutX=0;//miring badan
-        r_ik.sudutY=24;//kebungkukan badan		//22
-        r_ik.sudutZ=0;//putaran badan
-
-        l_ik.x=-12; //tinggi kaki kiri
-        l_ik.y=0;
-        l_ik.z=-0.3;
-
-        l_sudutX2=0;
-        l_sudutY2=24;
-        l_sudutZ2=0;
-        /*cout<<sudutX<<endl<<sudutY<<endl<<sudutZ<<endl<<x
-        <<endl<<y<<endl<<z<<endl;*/
-        // inverseAndre(sudutX,sudutY,sudutZ,x,y,z,sudutX2,sudutY2,sudutZ2,x2,y2,z2,50,'2');
-        inverseAndre(sudutX,sudutY,sudutZ,x,y,z,sudutX2,sudutY2,sudutZ2,x2,y2,z2,100,512,512,'2',480,520,270,750,250,750,data_image.x_head,data_image.y_head);//250,780,500,500
-        //cout<<"Masukkan Speed: ";
-        //cin>>speed;
-        sleep(1);//5
-         //kirimPacketInverse(x,y);
-        //cin>>speed;
-        //for(int i=1;i<=10;i++){
-		}
 		
 void jalan(){
         int speed, com7, com8;

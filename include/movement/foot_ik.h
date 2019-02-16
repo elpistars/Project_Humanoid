@@ -20,11 +20,12 @@ class Joint{
         };
         Joint(joint_param init);
         Joint();
-        inline Joint::joint_param getParam();
-        inline void getParam(joint_param &p);
         void setParam(double x, double y, double z, double sudutX, double sudutY, double sudutZ);
         void setParam(joint_param newParam);
-        void printParam();
+        void printParam(char* label);
+
+        Joint::joint_param getParam() {return param;}
+        void getParam(joint_param &p) {p=param;}
         
     private:
         joint_param param;
@@ -53,24 +54,12 @@ class IK{
         int cek_move();
         void setParam(double teta, double d_teta, int Speed);
         void setParam(ik_param newParam);
-        inline IK::ik_param getParam();
-        inline void getParam(ik_param &p);
-        void printParam();
+        IK::ik_param getParam(){return param;}
+        void getParam(ik_param &p){p=param;}
+        void printParam(char* label);
         ik_param param;
 
 };
-inline IK::ik_param IK::getParam(){
-	return this->param;
-}
-inline void IK::getParam(ik_param &p){
-	p=this->param;
-}
-inline Joint::joint_param Joint::getParam(){
-	return this->param;
-}
-inline void Joint::getParam(joint_param &p){
-	p=this->param;
-}
 
 extern int x_head,y_head;
 extern double f2;

@@ -48,11 +48,11 @@ void putarkanan(){
 		temp_joint[1].sudutY, 						// 22
 		temp_joint[1].sudutZ 						// 0
 		);
-		Kanan.printParam();
-		Kiri.printParam();
+		Kanan.printParam((char*)"Kanan :");
+		Kiri.printParam((char*)"Kiri :");
 		Invers.inverseAndre(Kanan.getParam(),Kiri.getParam(),Invers.param.speed,512,512,480,520,270,750,250,750,x_head,y_head);
 	}
-
+	sleep(10000);
 	cout<<endl<<endl;
 	//update nilai temp_joint
 	temp_joint[0]=Kanan.getParam();
@@ -70,7 +70,7 @@ void putarkanan(){
 		temp_joint[0].z,										// 0.3
 		temp_joint[0].sudutX + 1*sin(f2*3.14/180),				// -1
 		temp_joint[0].sudutY,									// 22
-		temp_joint[0].sudutZ + 512*sin(f2*3.14/180)				// 512
+		temp_joint[0].sudutZ + 20*sin(f2*3.14/180)				// 20
 		);
 
 		Kiri.setParam(temp_joint[1].x + 5*sin(f2*3.14/180),		// -7
@@ -78,10 +78,10 @@ void putarkanan(){
 		temp_joint[1].z,											// 0
 		temp_joint[1].sudutX - 3*sin(f2*3.14/180),				// -5
 		temp_joint[1].sudutY,									// 22
-		temp_joint[1].sudutZ + 472*sin(f2*3.14/180)				// 472
+		temp_joint[1].sudutZ + 15*sin(f2*3.14/180)				// 15
 		);
-		Kanan.printParam();
-		Kiri.printParam();
+		Kanan.printParam((char*)"Kanan :");
+		Kiri.printParam((char*)"Kiri :");
 
 		Invers.inverseAndre(Kanan.getParam(), Kiri.getParam(),Invers.param.speed,512,512,480,520,270,750,250,750,x_head,y_head);
 
@@ -104,7 +104,7 @@ void putarkanan(){
 		temp_joint[0].z,										// 0.3
 		temp_joint[0].sudutX*(1-sin(f2*3.14/180)),				// 0
 		temp_joint[0].sudutY,									// 22
-		temp_joint[0].sudutZ									// 512
+		temp_joint[0].sudutZ									// 20
 		);
 
 		Kiri.setParam(temp_joint[1].x - 5*sin(f2*3.14/180),		// -12
@@ -112,11 +112,11 @@ void putarkanan(){
 		temp_joint[1].z,										// 0
 		temp_joint[1].sudutX*(1-sin(f2*3.14/180)),				// 0
 		temp_joint[1].sudutY,									// 22
-		temp_joint[1].sudutZ 									// 472
+		temp_joint[1].sudutZ 									// 15
 		);
 
-		Kanan.printParam();
-		Kiri.printParam();
+		Kanan.printParam((char*)"Kanan :");
+		Kiri.printParam((char*)"Kiri :");
 
 		Invers.inverseAndre(Kanan.getParam(), Kiri.getParam(),Invers.param.speed,512,512,480,520,270,750,250,750,x_head,y_head);
 	}
@@ -139,7 +139,7 @@ void putarkanan(){
 		temp_joint[0].z,										// 0.3
 		temp_joint[0].sudutX + 2*sin(f2*3.14/180),				// 2
 		temp_joint[0].sudutY,									// 22
-		temp_joint[0].sudutZ									// 512
+		temp_joint[0].sudutZ									// 20
 		);
 
 		Kiri.setParam(temp_joint[1].x,							// -12
@@ -147,11 +147,11 @@ void putarkanan(){
 		temp_joint[1].z,											// 0
 		temp_joint[1].sudutX + 2*sin(f2*3.14/180),				// 2
 		temp_joint[1].sudutY,									// 0
-		temp_joint[1].sudutZ 									// 472
+		temp_joint[1].sudutZ 									// 15
 		);
 
-		Kanan.printParam();
-		Kiri.printParam();
+		Kanan.printParam((char*)"Kanan :");
+		Kiri.printParam((char*)"Kiri :");
 
 		Invers.inverseAndre(Kanan.getParam(),Kiri.getParam(),Invers.param.speed,512,512,480,520,270,750,250,750,x_head,y_head);
 
@@ -175,7 +175,7 @@ void putarkanan(){
 		temp_joint[0].z,										// 0.3
 		temp_joint[0].sudutX + 10*sin(f2*3.14/180),				// 12
 		temp_joint[0].sudutY,									// 22
-		temp_joint[0].sudutZ									// 512
+		temp_joint[0].sudutZ									// 20
 		);
 
 		Kiri.setParam(temp_joint[1].x + 8*sin(f2*3.14/180),		// -2
@@ -183,11 +183,11 @@ void putarkanan(){
 		temp_joint[1].z,										// 0
 		temp_joint[1].sudutX + 30*sin(f2*3.14/180),				// 32
 		temp_joint[1].sudutY,									// 0
-		temp_joint[1].sudutZ + 40*sin(f2*3.14/180) 				// 512
+		temp_joint[1].sudutZ + 5*sin(f2*3.14/180) 				// 15
 		);
 
-		Kanan.printParam();
-		Kiri.printParam();
+		Kanan.printParam((char*)"Kanan :");
+		Kiri.printParam((char*)"Kiri :");
 
 		Invers.inverseAndre(Kanan.getParam(),Kiri.getParam(),Invers.param.speed,512,512,480,520,270,750,250,750,x_head,y_head);
 	}
@@ -210,7 +210,7 @@ void putarkanan(){
 		temp_joint[0].z,										// 0.3
 		temp_joint[0].sudutX + 12*sin(f2*3.14/180),				// 0
 		temp_joint[0].sudutY,									// 22
-		temp_joint[0].sudutZ									// 512
+		temp_joint[0].sudutZ									// 20
 		);
 
 		Kiri.setParam(temp_joint[1].x - 10*sin(f2*3.14/180),	// -12
@@ -218,11 +218,11 @@ void putarkanan(){
 		temp_joint[1].z,										// 0
 		temp_joint[1].sudutX - 30*sin(f2*3.14/180),				// 32
 		temp_joint[1].sudutY,									// 0
-		temp_joint[1].sudutZ					 				// 472
+		temp_joint[1].sudutZ					 				// 15
 		);
 
-		Kanan.printParam();
-		Kiri.printParam();
+		Kanan.printParam((char*)"Kanan :");
+		Kiri.printParam((char*)"Kiri :");
 
 		Invers.inverseAndre(Kanan.getParam(),Kiri.getParam(),Invers.param.speed,512,512,480,520,270,750,250,750,x_head,y_head);
 	}
