@@ -51,7 +51,6 @@ class IK{
         void PrintErrorCode();
         void PrintCommStatus(int CommStatus);
         void setAllTorque(int torque);
-        int cek_move();
         void setParam(double teta, double d_teta, int Speed);
         void setParam(ik_param newParam);
         IK::ik_param getParam(){return param;}
@@ -63,6 +62,8 @@ class IK{
 
 extern int x_head,y_head;
 extern double f2;
+
+int cek_move();
 
 #ifdef __cplusplus
 }

@@ -76,7 +76,10 @@ void putarkiri(){
         sudutX=2*sin(sudutNgurang*3.14/180);/*(pow(sin(sudutNgurang*3.14/180),2));*/
         sudutY=22;//+sin(sudutNgurang*3.14/180);
         sudutZ=0;//3*(pow(sin(sudutNgurang*3.14/180),2));
-        x2=-12;//+sin(sudutNgurang*3.14/180)*2;
+        x2=-12;//+sin(sudutNg
+		temp_joint[1].sudutX - 3*sin(f2*3.14/180),
+		temp_joint[1].sudutY
+		temp_joint[1].sudutZ + 472*sin(f2*3.14/180)urang*3.14/180)*2;
 	y2=-2*sin(sudutNgurang*3.14/180);//2.4
         z2=0;
         sudutX2=2*sin(sudutNgurang*3.14/180);/*(pow(sin(sudutNgurang*3.14/180),2));*/

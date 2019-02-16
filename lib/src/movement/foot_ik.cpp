@@ -18,7 +18,7 @@ Joint::Joint(){
 }
 void Joint::setParam(double x, double y, double z, double sudutX, double sudutY, double sudutZ){
         param.x=x; param.y=y; param.z=z;
-        param.sudutX=sudutX; param.sudutY=sudutY; param.sudutZ=param.sudutZ;
+        param.sudutX=sudutX; param.sudutY=sudutY; param.sudutZ=sudutZ;
 }
 void Joint::setParam(joint_param newParam){
 	param=newParam;
@@ -38,7 +38,7 @@ void IK::setParam(double teta, double d_teta, int Speed){
 void IK::setParam(ik_param newParam){
 	param=newParam;
 }
-int IK::cek_move(){
+int cek_move(){
 	int moving=0;
 	int temp=0;
 	int i=0;
@@ -737,8 +737,10 @@ void IK::printParam(char* label){
 }
 void Joint::printParam(char* label){
 	cout<<label<<endl;
+	double sz;
+	sz=param.sudutZ;
 	cout<<param.x<<"\t"<<param.y<<"\t"<<param.z<<endl
-	<<param.sudutX<<"\t"<<param.sudutY<<"\t"<<param.sudutZ<<endl;
+	<<param.sudutX<<"\t"<<param.sudutY<<"\t"<<sz<<endl;
 }
 
 #endif
