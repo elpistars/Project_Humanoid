@@ -9,15 +9,10 @@
 using namespace std;
 
 
-void putarkanan(){
-	Joint Kanan,Kiri;
-	Joint::joint_param temp_joint[2];
-	IK Invers; 
+void putarkanan(){ 
 	int x_head=512;	
 	int y_head=512;
 	double f2=0;
-	Kanan.setParam(-12.4, 0, 0.3, 0, 22, 0);//x,y,z,sudutX,sudutY,sudutZ
-	Kiri.setParam(-12, 0, 0, 0, 22, 0);//x,y,z,sudutX,sudutY,sudutZ;
 	
 	//simpan nilai parameter kanan di joint[0] kiri di joint[1]
 	temp_joint[0]=Kanan.getParam();
@@ -52,7 +47,6 @@ void putarkanan(){
 		Kiri.printParam((char*)"Kiri :");
 		Invers.inverseAndre(Kanan.getParam(),Kiri.getParam(),Invers.param.speed,512,512,480,520,270,750,250,750,x_head,y_head);
 	}
-	sleep(10000);
 	cout<<endl<<endl;
 	//update nilai temp_joint
 	temp_joint[0]=Kanan.getParam();
