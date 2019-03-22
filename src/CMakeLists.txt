@@ -1,8 +1,5 @@
 cmake_minimum_required(VERSION 3.7.2)
-project(try)
-find_package(OpenCV REQUIRED)
-INCLUDE_DIRECTORIES( ${CMAKE_SOURCE_DIR} )
-add_executable(cam kamera.cpp)
-target_link_libraries(cam dxl pthread ${OpenCV_LIBS})
-
-
+add_subdirectory(movement)
+add_executable(humanoid_core core.cpp)
+target_include_directories(humanoid_core PRIVATE ${PROJECT_SOURCE_DIR}/include)
+target_link_libraries(humanoid_core core_movement)
