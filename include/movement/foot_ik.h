@@ -65,9 +65,9 @@ extern double f2;
 
 int cek_move();
 
-Joint Kanan,Kiri;
-Joint::joint_param temp_joint[2];
-IK Invers;
+extern Joint Kanan,Kiri;
+extern Joint::joint_param temp_joint[2];
+extern IK Invers;
 
 #ifdef __cplusplus
 }

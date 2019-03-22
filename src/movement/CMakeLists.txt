@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.7.2)
+set(MSOURCES foot_ik.cpp berdiri.cpp putarkanan.cpp putarkiri.cpp)
+add_library(core_movement STATIC ${MSOURCES})
+target_include_directories(core_movement PRIVATE ${PROJECT_SOURCE_DIR}/include)
+add_library(dxl STATIC IMPORTED)
+set_target_properties(dxl PROPERTIES IMPORTED_LOCATION /usr/lib/libdxl.a)
+target_link_libraries(core_movement dxl)
+install(TARGETS core_movement DESTINATION ${PROJECT_SOURCE_DIR}/lib)

@@ -10,9 +10,7 @@
 
 
 #include "movement/foot_ik.h" 
-
-#include "putarkanan.cpp"
-#include "putarkiri.cpp"
+#include "movement/core_movement.h"
 #include "kamera.cpp"
 
 using namespace std;

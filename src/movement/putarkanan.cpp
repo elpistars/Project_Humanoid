@@ -9,11 +9,7 @@
 using namespace std;
 
 
-void putarkanan(){ 
-	int x_head=512;	
-	int y_head=512;
-	double f2=0;
-	
+void putarkanan(){ 	
 	//simpan nilai parameter kanan di joint[0] kiri di joint[1]
 	temp_joint[0]=Kanan.getParam();
 	temp_joint[1]=Kiri.getParam();
