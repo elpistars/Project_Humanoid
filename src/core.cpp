@@ -3,8 +3,10 @@
 #include <unistd.h>
 #include "movement/core_movement.h"
 
+using namespace std;
 int main(){
 	dxl_initialize(0,1);
-	putarkanan();
+	cout<<x_head<<endl<<y_head;
+	berdiri();
 	usleep(100);
 }

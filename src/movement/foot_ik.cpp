@@ -9,6 +9,12 @@
 
 using namespace std;
 
+Joint Kanan,Kiri;
+Joint::joint_param temp_joint[2];
+IK Invers;
+int x_head,y_head;
+double f2;
+
 // definition for joint class
 Joint::Joint(joint_param init){
         Joint::setParam(init.x,init.y,init.z,init.sudutX,init.sudutY,init.sudutZ);
