@@ -7,6 +7,7 @@ using namespace std;
 int main(){
 	dxl_initialize(0,1);
 	cout<<x_head<<endl<<y_head;
-	berdiri();
-	usleep(100);
+	for(int i=0; i<10; i++){
+	  berdiri();  
+	}
 }
