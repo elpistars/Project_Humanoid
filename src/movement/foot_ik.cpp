@@ -743,10 +743,8 @@ void IK::printParam(char* label){
 }
 void Joint::printParam(char* label){
 	cout<<label<<endl;
-	double sz;
-	sz=param.sudutZ;
 	cout<<param.x<<"\t"<<param.y<<"\t"<<param.z<<endl
-	<<param.sudutX<<"\t"<<param.sudutY<<"\t"<<sz<<endl;
+	<<param.sudutX<<"\t"<<param.sudutY<<"\t"<<param.sudutZ<<endl;
 }
 
 #endif

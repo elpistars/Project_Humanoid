@@ -18,25 +18,25 @@ void putarkanan(){
         //cin>>speed;
     sleep(2);//5
 
-	// MIRING //
+	// MIRING kiri //
 	f2=0;
 	Invers.setParam(90,0.1,200); // max_sudut, inc_sudut, speed
 	while(f2<=Invers.param.sudut){
 		f2+=Invers.param.inc_sudut;
         
 		Kanan.setParam(temp_joint[0].x, 			//x -12.4
-		 temp_joint[0].y + 2*sin(f2*3.14/180),  	//y 2
+		 temp_joint[0].y - 2, //*sin(f2*3.14/180),  	//y 2
 		 temp_joint[0].z,				  			//z 0.3
-		 temp_joint[0].sudutX - 2*sin(f2*3.14/180), //sudutX -2
-		 temp_joint[0].sudutY,				  		//sudutY 22
+		 temp_joint[0].sudutX - 2 *sin(f2*3.14/180), //sudutX -2
+		 temp_joint[0].sudutY + 2,				  		//sudutY 22
 		 temp_joint[0].sudutZ						//sudutZ 0
 		);				  
 
 		Kiri.setParam(temp_joint[1].x, 				// -12
-		temp_joint[1].y + 2*sin(f2*3.14/180), 		// 2
+		temp_joint[1].y - 2,//*sin(f2*3.14/180), 		// 2
 		temp_joint[1].z, 							// 0
-		temp_joint[1].sudutX-2*sin(f2*3.14/180), 	// -2
-		temp_joint[1].sudutY, 						// 22
+		temp_joint[1].sudutX -2 *sin(f2*3.14/180), 	// -2
+		temp_joint[1].sudutY + 2, 						// 22
 		temp_joint[1].sudutZ 						// 0
 		);
 		Kanan.printParam((char*)"Kanan :");
@@ -49,7 +49,7 @@ void putarkanan(){
 	temp_joint[1]=Kiri.getParam();
 
 	f2=0;
-	usleep(1000);
+	sleep(1000);
 // ------------------  ANKAT KAKI DAN MENDARAT //
 	Invers.setParam(90,0.08,200);
 	while(f2<=Invers.param.sudut){
@@ -119,7 +119,7 @@ void putarkanan(){
 
 	
 // ----------------------------- MIRING //	
-	usleep(600000);
+	sleep(5000);
 	f2=0;
 	Invers.setParam(90,0.2,200);
 	while(f2<=Invers.param.sudut){

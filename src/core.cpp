@@ -8,6 +8,9 @@ int main(){
 	dxl_initialize(0,1);
 	cout<<x_head<<endl<<y_head;
 	for(int i=0; i<10; i++){
-	  berdiri();  
+	  berdiri();
+	  usleep(1000);
+	putarkanan();
+	usleep(1000);  
 	}
 }
