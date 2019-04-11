@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/dynamixel/dynamixel.h
+
+../include/movement/berdiri.h
+foot_ik.h
+../include/movement/foot_ik.h
+
+../include/movement/core_movement.h
+foot_ik.h
+../include/movement/foot_ik.h
+putarkanan.h
+../include/movement/putarkanan.h
+berdiri.h
+../include/movement/berdiri.h
+
+../include/movement/foot_ik.h
+iostream
+-
+dynamixel/dynamixel.h
+../include/movement/dynamixel/dynamixel.h
+unistd.h
+-
+math.h
+-
+
+../include/movement/putarkanan.h
+foot_ik.h
+../include/movement/foot_ik.h
+
+/home/pi/Project_Humanoid/src/core.cpp
+iostream
+-
+dynamixel/dynamixel.h
+/home/pi/Project_Humanoid/src/dynamixel/dynamixel.h
+unistd.h
+-
+movement/core_movement.h
+/home/pi/Project_Humanoid/src/movement/core_movement.h
+

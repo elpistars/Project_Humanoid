@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcore_movement.a  CMakeFiles/core_movement.dir/foot_ik.cpp.o CMakeFiles/core_movement.dir/berdiri.cpp.o CMakeFiles/core_movement.dir/putarkanan.cpp.o CMakeFiles/core_movement.dir/putarkiri.cpp.o
+/usr/bin/ranlib libcore_movement.a

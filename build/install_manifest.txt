@@ -1,0 +1,2 @@
+/home/pi/Project_Humanoid/bin/humanoid_core
+/home/pi/Project_Humanoid/lib/libcore_movement.a

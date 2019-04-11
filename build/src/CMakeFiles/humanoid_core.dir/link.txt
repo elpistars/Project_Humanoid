@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/humanoid_core.dir/core.cpp.o  -o humanoid_core movement/libcore_movement.a /usr/lib/libdxl.a 
