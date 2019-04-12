@@ -8,17 +8,9 @@
 
 ../include/dynamixel/dynamixel.h
 
-../include/movement/berdiri.h
-foot_ik.h
-../include/movement/foot_ik.h
-
 ../include/movement/core_movement.h
 foot_ik.h
 ../include/movement/foot_ik.h
-putarkanan.h
-../include/movement/putarkanan.h
-berdiri.h
-../include/movement/berdiri.h
 
 ../include/movement/foot_ik.h
 iostream
@@ -29,10 +21,6 @@ unistd.h
 -
 math.h
 -
-
-../include/movement/putarkanan.h
-foot_ik.h
-../include/movement/foot_ik.h
 
 /home/pi/Project_Humanoid/src/core.cpp
 iostream

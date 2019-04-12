@@ -8,6 +8,10 @@
 
 ../include/dynamixel/dynamixel.h
 
+../include/movement/core_movement.h
+foot_ik.h
+../include/movement/foot_ik.h
+
 ../include/movement/foot_ik.h
 iostream
 -
@@ -37,6 +41,30 @@ unistd.h
 -
 math.h
 -
+
+/home/pi/Project_Humanoid/src/movement/langkah_sk2.cpp
+iostream
+-
+thread
+-
+mutex
+-
+condition_variable
+-
+fcntl.h
+-
+sys/stat.h
+-
+sys/types.h
+-
+unistd.h
+-
+string.h
+-
+movement/foot_ik.h
+/home/pi/Project_Humanoid/src/movement/movement/foot_ik.h
+movement/core_movement.h
+/home/pi/Project_Humanoid/src/movement/movement/core_movement.h
 
 /home/pi/Project_Humanoid/src/movement/putarkanan.cpp
 iostream

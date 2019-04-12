@@ -3,8 +3,6 @@
 
 src/CMakeFiles/humanoid_core.dir/core.cpp.o
  ../include/dynamixel/dynamixel.h
- ../include/movement/berdiri.h
  ../include/movement/core_movement.h
  ../include/movement/foot_ik.h
- ../include/movement/putarkanan.h
  /home/pi/Project_Humanoid/src/core.cpp

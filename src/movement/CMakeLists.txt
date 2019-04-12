@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.7.2)
-set(MSOURCES foot_ik.cpp berdiri.cpp putarkanan.cpp putarkiri.cpp)
+set(MSOURCES foot_ik.cpp berdiri.cpp putarkanan.cpp putarkiri.cpp langkah_sk2.cpp)
 add_library(core_movement STATIC ${MSOURCES})
 target_include_directories(core_movement PRIVATE ${PROJECT_SOURCE_DIR}/include)
 add_library(dxl STATIC IMPORTED)

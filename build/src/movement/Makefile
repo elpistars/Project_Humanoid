@@ -223,6 +223,33 @@ foot_ik.cpp.s:
 	cd /home/pi/Project_Humanoid/build && $(MAKE) -f src/movement/CMakeFiles/core_movement.dir/build.make src/movement/CMakeFiles/core_movement.dir/foot_ik.cpp.s
 .PHONY : foot_ik.cpp.s
 
+langkah_sk2.o: langkah_sk2.cpp.o
+
+.PHONY : langkah_sk2.o
+
+# target to build an object file
+langkah_sk2.cpp.o:
+	cd /home/pi/Project_Humanoid/build && $(MAKE) -f src/movement/CMakeFiles/core_movement.dir/build.make src/movement/CMakeFiles/core_movement.dir/langkah_sk2.cpp.o
+.PHONY : langkah_sk2.cpp.o
+
+langkah_sk2.i: langkah_sk2.cpp.i
+
+.PHONY : langkah_sk2.i
+
+# target to preprocess a source file
+langkah_sk2.cpp.i:
+	cd /home/pi/Project_Humanoid/build && $(MAKE) -f src/movement/CMakeFiles/core_movement.dir/build.make src/movement/CMakeFiles/core_movement.dir/langkah_sk2.cpp.i
+.PHONY : langkah_sk2.cpp.i
+
+langkah_sk2.s: langkah_sk2.cpp.s
+
+.PHONY : langkah_sk2.s
+
+# target to generate assembly for a file
+langkah_sk2.cpp.s:
+	cd /home/pi/Project_Humanoid/build && $(MAKE) -f src/movement/CMakeFiles/core_movement.dir/build.make src/movement/CMakeFiles/core_movement.dir/langkah_sk2.cpp.s
+.PHONY : langkah_sk2.cpp.s
+
 putarkanan.o: putarkanan.cpp.o
 
 .PHONY : putarkanan.o
@@ -296,6 +323,9 @@ help:
 	@echo "... foot_ik.o"
 	@echo "... foot_ik.i"
 	@echo "... foot_ik.s"
+	@echo "... langkah_sk2.o"
+	@echo "... langkah_sk2.i"
+	@echo "... langkah_sk2.s"
 	@echo "... putarkanan.o"
 	@echo "... putarkanan.i"
 	@echo "... putarkanan.s"

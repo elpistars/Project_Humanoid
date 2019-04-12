@@ -153,12 +153,37 @@ src/movement/CMakeFiles/core_movement.dir/putarkiri.cpp.o.provides: src/movement
 src/movement/CMakeFiles/core_movement.dir/putarkiri.cpp.o.provides.build: src/movement/CMakeFiles/core_movement.dir/putarkiri.cpp.o
 
 
+src/movement/CMakeFiles/core_movement.dir/langkah_sk2.cpp.o: src/movement/CMakeFiles/core_movement.dir/flags.make
+src/movement/CMakeFiles/core_movement.dir/langkah_sk2.cpp.o: ../src/movement/langkah_sk2.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/Project_Humanoid/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/movement/CMakeFiles/core_movement.dir/langkah_sk2.cpp.o"
+	cd /home/pi/Project_Humanoid/build/src/movement && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/core_movement.dir/langkah_sk2.cpp.o -c /home/pi/Project_Humanoid/src/movement/langkah_sk2.cpp
+
+src/movement/CMakeFiles/core_movement.dir/langkah_sk2.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/core_movement.dir/langkah_sk2.cpp.i"
+	cd /home/pi/Project_Humanoid/build/src/movement && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pi/Project_Humanoid/src/movement/langkah_sk2.cpp > CMakeFiles/core_movement.dir/langkah_sk2.cpp.i
+
+src/movement/CMakeFiles/core_movement.dir/langkah_sk2.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/core_movement.dir/langkah_sk2.cpp.s"
+	cd /home/pi/Project_Humanoid/build/src/movement && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pi/Project_Humanoid/src/movement/langkah_sk2.cpp -o CMakeFiles/core_movement.dir/langkah_sk2.cpp.s
+
+src/movement/CMakeFiles/core_movement.dir/langkah_sk2.cpp.o.requires:
+
+.PHONY : src/movement/CMakeFiles/core_movement.dir/langkah_sk2.cpp.o.requires
+
+src/movement/CMakeFiles/core_movement.dir/langkah_sk2.cpp.o.provides: src/movement/CMakeFiles/core_movement.dir/langkah_sk2.cpp.o.requires
+	$(MAKE) -f src/movement/CMakeFiles/core_movement.dir/build.make src/movement/CMakeFiles/core_movement.dir/langkah_sk2.cpp.o.provides.build
+.PHONY : src/movement/CMakeFiles/core_movement.dir/langkah_sk2.cpp.o.provides
+
+src/movement/CMakeFiles/core_movement.dir/langkah_sk2.cpp.o.provides.build: src/movement/CMakeFiles/core_movement.dir/langkah_sk2.cpp.o
+
+
 # Object files for target core_movement
 core_movement_OBJECTS = \
 "CMakeFiles/core_movement.dir/foot_ik.cpp.o" \
 "CMakeFiles/core_movement.dir/berdiri.cpp.o" \
 "CMakeFiles/core_movement.dir/putarkanan.cpp.o" \
-"CMakeFiles/core_movement.dir/putarkiri.cpp.o"
+"CMakeFiles/core_movement.dir/putarkiri.cpp.o" \
+"CMakeFiles/core_movement.dir/langkah_sk2.cpp.o"
 
 # External object files for target core_movement
 core_movement_EXTERNAL_OBJECTS =
@@ -167,9 +192,10 @@ src/movement/libcore_movement.a: src/movement/CMakeFiles/core_movement.dir/foot_
 src/movement/libcore_movement.a: src/movement/CMakeFiles/core_movement.dir/berdiri.cpp.o
 src/movement/libcore_movement.a: src/movement/CMakeFiles/core_movement.dir/putarkanan.cpp.o
 src/movement/libcore_movement.a: src/movement/CMakeFiles/core_movement.dir/putarkiri.cpp.o
+src/movement/libcore_movement.a: src/movement/CMakeFiles/core_movement.dir/langkah_sk2.cpp.o
 src/movement/libcore_movement.a: src/movement/CMakeFiles/core_movement.dir/build.make
 src/movement/libcore_movement.a: src/movement/CMakeFiles/core_movement.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pi/Project_Humanoid/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library libcore_movement.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pi/Project_Humanoid/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX static library libcore_movement.a"
 	cd /home/pi/Project_Humanoid/build/src/movement && $(CMAKE_COMMAND) -P CMakeFiles/core_movement.dir/cmake_clean_target.cmake
 	cd /home/pi/Project_Humanoid/build/src/movement && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/core_movement.dir/link.txt --verbose=$(VERBOSE)
 
@@ -182,6 +208,7 @@ src/movement/CMakeFiles/core_movement.dir/requires: src/movement/CMakeFiles/core
 src/movement/CMakeFiles/core_movement.dir/requires: src/movement/CMakeFiles/core_movement.dir/berdiri.cpp.o.requires
 src/movement/CMakeFiles/core_movement.dir/requires: src/movement/CMakeFiles/core_movement.dir/putarkanan.cpp.o.requires
 src/movement/CMakeFiles/core_movement.dir/requires: src/movement/CMakeFiles/core_movement.dir/putarkiri.cpp.o.requires
+src/movement/CMakeFiles/core_movement.dir/requires: src/movement/CMakeFiles/core_movement.dir/langkah_sk2.cpp.o.requires
 
 .PHONY : src/movement/CMakeFiles/core_movement.dir/requires
 

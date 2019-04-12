@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/pi/Project_Humanoid/src/movement/berdiri.cpp" "/home/pi/Project_Humanoid/build/src/movement/CMakeFiles/core_movement.dir/berdiri.cpp.o"
   "/home/pi/Project_Humanoid/src/movement/foot_ik.cpp" "/home/pi/Project_Humanoid/build/src/movement/CMakeFiles/core_movement.dir/foot_ik.cpp.o"
+  "/home/pi/Project_Humanoid/src/movement/langkah_sk2.cpp" "/home/pi/Project_Humanoid/build/src/movement/CMakeFiles/core_movement.dir/langkah_sk2.cpp.o"
   "/home/pi/Project_Humanoid/src/movement/putarkanan.cpp" "/home/pi/Project_Humanoid/build/src/movement/CMakeFiles/core_movement.dir/putarkanan.cpp.o"
   "/home/pi/Project_Humanoid/src/movement/putarkiri.cpp" "/home/pi/Project_Humanoid/build/src/movement/CMakeFiles/core_movement.dir/putarkiri.cpp.o"
   )

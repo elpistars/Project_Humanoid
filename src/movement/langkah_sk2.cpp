@@ -8,8 +8,8 @@
 #include <unistd.h> 
 #include <string.h>
 
+#include "movement/foot_ik.h"
 #include "movement/core_movement.h"
-#include "kamera.cpp"
 
 using namespace std;
 
@@ -28,8 +28,6 @@ double pidx = 0;
 double pidy= 0;
 double setpointx = 270.5;
 double setpointy = 1.1;
-double f2;
-double a=0.2;
 int jdt=0;
 int jdt2;
 void sensen(){

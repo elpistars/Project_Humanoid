@@ -9,6 +9,11 @@ src/movement/CMakeFiles/core_movement.dir/foot_ik.cpp.o: ../include/dynamixel/dy
 src/movement/CMakeFiles/core_movement.dir/foot_ik.cpp.o: ../include/movement/foot_ik.h
 src/movement/CMakeFiles/core_movement.dir/foot_ik.cpp.o: ../src/movement/foot_ik.cpp
 
+src/movement/CMakeFiles/core_movement.dir/langkah_sk2.cpp.o: ../include/dynamixel/dynamixel.h
+src/movement/CMakeFiles/core_movement.dir/langkah_sk2.cpp.o: ../include/movement/core_movement.h
+src/movement/CMakeFiles/core_movement.dir/langkah_sk2.cpp.o: ../include/movement/foot_ik.h
+src/movement/CMakeFiles/core_movement.dir/langkah_sk2.cpp.o: ../src/movement/langkah_sk2.cpp
+
 src/movement/CMakeFiles/core_movement.dir/putarkanan.cpp.o: ../include/dynamixel/dynamixel.h
 src/movement/CMakeFiles/core_movement.dir/putarkanan.cpp.o: ../include/movement/foot_ik.h
 src/movement/CMakeFiles/core_movement.dir/putarkanan.cpp.o: ../src/movement/putarkanan.cpp
