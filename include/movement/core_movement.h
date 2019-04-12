@@ -2,7 +2,10 @@
 #define CORE_MOVEMENT_H
 
 #include "foot_ik.h"
-#include "putarkanan.h"
-#include "berdiri.h"
+
+void putarkanan();
+void berdiri();
+void putarkiri();
+void jalan();
 
 #endif
