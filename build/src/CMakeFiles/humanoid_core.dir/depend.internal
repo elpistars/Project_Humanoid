@@ -5,4 +5,4 @@ src/CMakeFiles/humanoid_core.dir/core.cpp.o
  ../include/dynamixel/dynamixel.h
  ../include/movement/core_movement.h
  ../include/movement/foot_ik.h
- /home/pi/Project_Humanoid/src/core.cpp
+ /home/elpistars/elpistars/Project_Humanoid/src/core.cpp

@@ -24,16 +24,18 @@ void putarkanan(){
 	while(f2<=Invers.param.sudut){
 		f2+=Invers.param.inc_sudut;
         
-		Kanan.setParam(temp_joint[0].x, 			//x -12.4
-		 temp_joint[0].y - 2, //*sin(f2*3.14/180),  	//y 2
+		Kanan.setParam(
+		 temp_joint[0].x, 			//x -12.4
+		 temp_joint[0].y,// - 2*sin(f2*3.14/180),  	//y 2
 		 temp_joint[0].z,				  			//z 0.3
 		 temp_joint[0].sudutX - 2 *sin(f2*3.14/180), //sudutX -2
 		 temp_joint[0].sudutY + 2,				  		//sudutY 22
 		 temp_joint[0].sudutZ						//sudutZ 0
 		);				  
 
-		Kiri.setParam(temp_joint[1].x, 				// -12
-		temp_joint[1].y - 2,//*sin(f2*3.14/180), 		// 2
+		Kiri.setParam(
+	     	temp_joint[1].x, 				// -12
+		temp_joint[1].y,// - 2*sin(f2*3.14/180), 		// 2
 		temp_joint[1].z, 							// 0
 		temp_joint[1].sudutX -2 *sin(f2*3.14/180), 	// -2
 		temp_joint[1].sudutY + 2, 						// 22
@@ -49,13 +51,14 @@ void putarkanan(){
 	temp_joint[1]=Kiri.getParam();
 
 	f2=0;
-	sleep(1000);
+	usleep(1000);
 // ------------------  ANKAT KAKI DAN MENDARAT //
 	Invers.setParam(90,0.08,200);
 	while(f2<=Invers.param.sudut){
 		f2+=Invers.param.inc_sudut;
 		
-		Kanan.setParam(temp_joint[0].x+5*sin(f2*3.14/180),		// -7.4
+		Kanan.setParam(
+		temp_joint[0].x + 5*sin(f2*3.14/180),		// -7.4
 		temp_joint[0].y - 1* sin(f2*3.14/180),					// 1
 		temp_joint[0].z,										// 0.3
 		temp_joint[0].sudutX + 1*sin(f2*3.14/180),				// -1
@@ -63,8 +66,9 @@ void putarkanan(){
 		temp_joint[0].sudutZ + 20*sin(f2*3.14/180)				// 20
 		);
 
-		Kiri.setParam(temp_joint[1].x + 5*sin(f2*3.14/180),		// -7
-		temp_joint[1].y - 1*sin(f2*3.14/180),					// 1
+		Kiri.setParam(
+		temp_joint[1].x + 5*sin(f2*3.14/180),		// -7
+		temp_joint[1].y + 1*sin(f2*3.14/180),					// 1
 		temp_joint[1].z,											// 0
 		temp_joint[1].sudutX - 3*sin(f2*3.14/180),				// -5
 		temp_joint[1].sudutY,									// 22
@@ -83,7 +87,7 @@ void putarkanan(){
 	temp_joint[1]=Kiri.getParam();
 
 	f2=0;
-	usleep(5000);
+	sleep(5000);
 // --------------------------- BALIKIN MIRING //
 	Invers.setParam(90,0.2,200);
 	while(f2<=Invers.param.sudut){

@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pi/Project_Humanoid
+CMAKE_SOURCE_DIR = /home/elpistars/elpistars/Project_Humanoid
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pi/Project_Humanoid/build
+CMAKE_BINARY_DIR = /home/elpistars/elpistars/Project_Humanoid/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -124,14 +124,14 @@ list_install_components/fast: list_install_components
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/pi/Project_Humanoid/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Project_Humanoid/build/CMakeFiles /home/pi/Project_Humanoid/build/src/movement/CMakeFiles/progress.marks
-	cd /home/pi/Project_Humanoid/build && $(MAKE) -f CMakeFiles/Makefile2 src/movement/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Project_Humanoid/build/CMakeFiles 0
+	cd /home/elpistars/elpistars/Project_Humanoid/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/elpistars/elpistars/Project_Humanoid/build/CMakeFiles /home/elpistars/elpistars/Project_Humanoid/build/src/movement/CMakeFiles/progress.marks
+	cd /home/elpistars/elpistars/Project_Humanoid/build && $(MAKE) -f CMakeFiles/Makefile2 src/movement/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/elpistars/elpistars/Project_Humanoid/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/pi/Project_Humanoid/build && $(MAKE) -f CMakeFiles/Makefile2 src/movement/clean
+	cd /home/elpistars/elpistars/Project_Humanoid/build && $(MAKE) -f CMakeFiles/Makefile2 src/movement/clean
 .PHONY : clean
 
 # The main clean target
@@ -141,22 +141,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/pi/Project_Humanoid/build && $(MAKE) -f CMakeFiles/Makefile2 src/movement/preinstall
+	cd /home/elpistars/elpistars/Project_Humanoid/build && $(MAKE) -f CMakeFiles/Makefile2 src/movement/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/pi/Project_Humanoid/build && $(MAKE) -f CMakeFiles/Makefile2 src/movement/preinstall
+	cd /home/elpistars/elpistars/Project_Humanoid/build && $(MAKE) -f CMakeFiles/Makefile2 src/movement/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/pi/Project_Humanoid/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/elpistars/elpistars/Project_Humanoid/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/movement/CMakeFiles/core_movement.dir/rule:
-	cd /home/pi/Project_Humanoid/build && $(MAKE) -f CMakeFiles/Makefile2 src/movement/CMakeFiles/core_movement.dir/rule
+	cd /home/elpistars/elpistars/Project_Humanoid/build && $(MAKE) -f CMakeFiles/Makefile2 src/movement/CMakeFiles/core_movement.dir/rule
 .PHONY : src/movement/CMakeFiles/core_movement.dir/rule
 
 # Convenience name for target.
@@ -166,7 +166,7 @@ core_movement: src/movement/CMakeFiles/core_movement.dir/rule
 
 # fast build rule for target.
 core_movement/fast:
-	cd /home/pi/Project_Humanoid/build && $(MAKE) -f src/movement/CMakeFiles/core_movement.dir/build.make src/movement/CMakeFiles/core_movement.dir/build
+	cd /home/elpistars/elpistars/Project_Humanoid/build && $(MAKE) -f src/movement/CMakeFiles/core_movement.dir/build.make src/movement/CMakeFiles/core_movement.dir/build
 .PHONY : core_movement/fast
 
 berdiri.o: berdiri.cpp.o
@@ -175,7 +175,7 @@ berdiri.o: berdiri.cpp.o
 
 # target to build an object file
 berdiri.cpp.o:
-	cd /home/pi/Project_Humanoid/build && $(MAKE) -f src/movement/CMakeFiles/core_movement.dir/build.make src/movement/CMakeFiles/core_movement.dir/berdiri.cpp.o
+	cd /home/elpistars/elpistars/Project_Humanoid/build && $(MAKE) -f src/movement/CMakeFiles/core_movement.dir/build.make src/movement/CMakeFiles/core_movement.dir/berdiri.cpp.o
 .PHONY : berdiri.cpp.o
 
 berdiri.i: berdiri.cpp.i
@@ -184,7 +184,7 @@ berdiri.i: berdiri.cpp.i
 
 # target to preprocess a source file
 berdiri.cpp.i:
-	cd /home/pi/Project_Humanoid/build && $(MAKE) -f src/movement/CMakeFiles/core_movement.dir/build.make src/movement/CMakeFiles/core_movement.dir/berdiri.cpp.i
+	cd /home/elpistars/elpistars/Project_Humanoid/build && $(MAKE) -f src/movement/CMakeFiles/core_movement.dir/build.make src/movement/CMakeFiles/core_movement.dir/berdiri.cpp.i
 .PHONY : berdiri.cpp.i
 
 berdiri.s: berdiri.cpp.s
@@ -193,7 +193,7 @@ berdiri.s: berdiri.cpp.s
 
 # target to generate assembly for a file
 berdiri.cpp.s:
-	cd /home/pi/Project_Humanoid/build && $(MAKE) -f src/movement/CMakeFiles/core_movement.dir/build.make src/movement/CMakeFiles/core_movement.dir/berdiri.cpp.s
+	cd /home/elpistars/elpistars/Project_Humanoid/build && $(MAKE) -f src/movement/CMakeFiles/core_movement.dir/build.make src/movement/CMakeFiles/core_movement.dir/berdiri.cpp.s
 .PHONY : berdiri.cpp.s
 
 foot_ik.o: foot_ik.cpp.o
@@ -202,7 +202,7 @@ foot_ik.o: foot_ik.cpp.o
 
 # target to build an object file
 foot_ik.cpp.o:
-	cd /home/pi/Project_Humanoid/build && $(MAKE) -f src/movement/CMakeFiles/core_movement.dir/build.make src/movement/CMakeFiles/core_movement.dir/foot_ik.cpp.o
+	cd /home/elpistars/elpistars/Project_Humanoid/build && $(MAKE) -f src/movement/CMakeFiles/core_movement.dir/build.make src/movement/CMakeFiles/core_movement.dir/foot_ik.cpp.o
 .PHONY : foot_ik.cpp.o
 
 foot_ik.i: foot_ik.cpp.i
@@ -211,7 +211,7 @@ foot_ik.i: foot_ik.cpp.i
 
 # target to preprocess a source file
 foot_ik.cpp.i:
-	cd /home/pi/Project_Humanoid/build && $(MAKE) -f src/movement/CMakeFiles/core_movement.dir/build.make src/movement/CMakeFiles/core_movement.dir/foot_ik.cpp.i
+	cd /home/elpistars/elpistars/Project_Humanoid/build && $(MAKE) -f src/movement/CMakeFiles/core_movement.dir/build.make src/movement/CMakeFiles/core_movement.dir/foot_ik.cpp.i
 .PHONY : foot_ik.cpp.i
 
 foot_ik.s: foot_ik.cpp.s
@@ -220,7 +220,7 @@ foot_ik.s: foot_ik.cpp.s
 
 # target to generate assembly for a file
 foot_ik.cpp.s:
-	cd /home/pi/Project_Humanoid/build && $(MAKE) -f src/movement/CMakeFiles/core_movement.dir/build.make src/movement/CMakeFiles/core_movement.dir/foot_ik.cpp.s
+	cd /home/elpistars/elpistars/Project_Humanoid/build && $(MAKE) -f src/movement/CMakeFiles/core_movement.dir/build.make src/movement/CMakeFiles/core_movement.dir/foot_ik.cpp.s
 .PHONY : foot_ik.cpp.s
 
 langkah_sk2.o: langkah_sk2.cpp.o
@@ -229,7 +229,7 @@ langkah_sk2.o: langkah_sk2.cpp.o
 
 # target to build an object file
 langkah_sk2.cpp.o:
-	cd /home/pi/Project_Humanoid/build && $(MAKE) -f src/movement/CMakeFiles/core_movement.dir/build.make src/movement/CMakeFiles/core_movement.dir/langkah_sk2.cpp.o
+	cd /home/elpistars/elpistars/Project_Humanoid/build && $(MAKE) -f src/movement/CMakeFiles/core_movement.dir/build.make src/movement/CMakeFiles/core_movement.dir/langkah_sk2.cpp.o
 .PHONY : langkah_sk2.cpp.o
 
 langkah_sk2.i: langkah_sk2.cpp.i
@@ -238,7 +238,7 @@ langkah_sk2.i: langkah_sk2.cpp.i
 
 # target to preprocess a source file
 langkah_sk2.cpp.i:
-	cd /home/pi/Project_Humanoid/build && $(MAKE) -f src/movement/CMakeFiles/core_movement.dir/build.make src/movement/CMakeFiles/core_movement.dir/langkah_sk2.cpp.i
+	cd /home/elpistars/elpistars/Project_Humanoid/build && $(MAKE) -f src/movement/CMakeFiles/core_movement.dir/build.make src/movement/CMakeFiles/core_movement.dir/langkah_sk2.cpp.i
 .PHONY : langkah_sk2.cpp.i
 
 langkah_sk2.s: langkah_sk2.cpp.s
@@ -247,7 +247,7 @@ langkah_sk2.s: langkah_sk2.cpp.s
 
 # target to generate assembly for a file
 langkah_sk2.cpp.s:
-	cd /home/pi/Project_Humanoid/build && $(MAKE) -f src/movement/CMakeFiles/core_movement.dir/build.make src/movement/CMakeFiles/core_movement.dir/langkah_sk2.cpp.s
+	cd /home/elpistars/elpistars/Project_Humanoid/build && $(MAKE) -f src/movement/CMakeFiles/core_movement.dir/build.make src/movement/CMakeFiles/core_movement.dir/langkah_sk2.cpp.s
 .PHONY : langkah_sk2.cpp.s
 
 putarkanan.o: putarkanan.cpp.o
@@ -256,7 +256,7 @@ putarkanan.o: putarkanan.cpp.o
 
 # target to build an object file
 putarkanan.cpp.o:
-	cd /home/pi/Project_Humanoid/build && $(MAKE) -f src/movement/CMakeFiles/core_movement.dir/build.make src/movement/CMakeFiles/core_movement.dir/putarkanan.cpp.o
+	cd /home/elpistars/elpistars/Project_Humanoid/build && $(MAKE) -f src/movement/CMakeFiles/core_movement.dir/build.make src/movement/CMakeFiles/core_movement.dir/putarkanan.cpp.o
 .PHONY : putarkanan.cpp.o
 
 putarkanan.i: putarkanan.cpp.i
@@ -265,7 +265,7 @@ putarkanan.i: putarkanan.cpp.i
 
 # target to preprocess a source file
 putarkanan.cpp.i:
-	cd /home/pi/Project_Humanoid/build && $(MAKE) -f src/movement/CMakeFiles/core_movement.dir/build.make src/movement/CMakeFiles/core_movement.dir/putarkanan.cpp.i
+	cd /home/elpistars/elpistars/Project_Humanoid/build && $(MAKE) -f src/movement/CMakeFiles/core_movement.dir/build.make src/movement/CMakeFiles/core_movement.dir/putarkanan.cpp.i
 .PHONY : putarkanan.cpp.i
 
 putarkanan.s: putarkanan.cpp.s
@@ -274,7 +274,7 @@ putarkanan.s: putarkanan.cpp.s
 
 # target to generate assembly for a file
 putarkanan.cpp.s:
-	cd /home/pi/Project_Humanoid/build && $(MAKE) -f src/movement/CMakeFiles/core_movement.dir/build.make src/movement/CMakeFiles/core_movement.dir/putarkanan.cpp.s
+	cd /home/elpistars/elpistars/Project_Humanoid/build && $(MAKE) -f src/movement/CMakeFiles/core_movement.dir/build.make src/movement/CMakeFiles/core_movement.dir/putarkanan.cpp.s
 .PHONY : putarkanan.cpp.s
 
 putarkiri.o: putarkiri.cpp.o
@@ -283,7 +283,7 @@ putarkiri.o: putarkiri.cpp.o
 
 # target to build an object file
 putarkiri.cpp.o:
-	cd /home/pi/Project_Humanoid/build && $(MAKE) -f src/movement/CMakeFiles/core_movement.dir/build.make src/movement/CMakeFiles/core_movement.dir/putarkiri.cpp.o
+	cd /home/elpistars/elpistars/Project_Humanoid/build && $(MAKE) -f src/movement/CMakeFiles/core_movement.dir/build.make src/movement/CMakeFiles/core_movement.dir/putarkiri.cpp.o
 .PHONY : putarkiri.cpp.o
 
 putarkiri.i: putarkiri.cpp.i
@@ -292,7 +292,7 @@ putarkiri.i: putarkiri.cpp.i
 
 # target to preprocess a source file
 putarkiri.cpp.i:
-	cd /home/pi/Project_Humanoid/build && $(MAKE) -f src/movement/CMakeFiles/core_movement.dir/build.make src/movement/CMakeFiles/core_movement.dir/putarkiri.cpp.i
+	cd /home/elpistars/elpistars/Project_Humanoid/build && $(MAKE) -f src/movement/CMakeFiles/core_movement.dir/build.make src/movement/CMakeFiles/core_movement.dir/putarkiri.cpp.i
 .PHONY : putarkiri.cpp.i
 
 putarkiri.s: putarkiri.cpp.s
@@ -301,7 +301,7 @@ putarkiri.s: putarkiri.cpp.s
 
 # target to generate assembly for a file
 putarkiri.cpp.s:
-	cd /home/pi/Project_Humanoid/build && $(MAKE) -f src/movement/CMakeFiles/core_movement.dir/build.make src/movement/CMakeFiles/core_movement.dir/putarkiri.cpp.s
+	cd /home/elpistars/elpistars/Project_Humanoid/build && $(MAKE) -f src/movement/CMakeFiles/core_movement.dir/build.make src/movement/CMakeFiles/core_movement.dir/putarkiri.cpp.s
 .PHONY : putarkiri.cpp.s
 
 # Help Target
@@ -343,6 +343,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/pi/Project_Humanoid/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/elpistars/elpistars/Project_Humanoid/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

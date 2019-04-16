@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/pi/Project_Humanoid/src/core.cpp" "/home/pi/Project_Humanoid/build/src/CMakeFiles/humanoid_core.dir/core.cpp.o"
+  "/home/elpistars/elpistars/Project_Humanoid/src/core.cpp" "/home/elpistars/elpistars/Project_Humanoid/build/src/CMakeFiles/humanoid_core.dir/core.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -15,7 +15,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/pi/Project_Humanoid/build/src/movement/CMakeFiles/core_movement.dir/DependInfo.cmake"
+  "/home/elpistars/elpistars/Project_Humanoid/build/src/movement/CMakeFiles/core_movement.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

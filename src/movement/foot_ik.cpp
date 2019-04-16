@@ -691,44 +691,44 @@ void IK::kirimPacketTorque(int totalServo, int id[], int torque){ //Buat ngeset 
 
 void IK::PrintErrorCode() {
 	if(dxl_get_rxpacket_error(ERRBIT_VOLTAGE) == 1)
-		printf("Input voltage error!\n");
+		cout<<"Input voltage error!\n";
 	if(dxl_get_rxpacket_error(ERRBIT_ANGLE) == 1)
-		printf("Angle limit error!\n");
+		cout<<"Angle limit error!\n";
 	if(dxl_get_rxpacket_error(ERRBIT_OVERHEAT) == 1)
-		printf("Overheat error!\n");
+		cout<<"Overheat error!\n";
 	if(dxl_get_rxpacket_error(ERRBIT_RANGE) == 1)
-		printf("Out of range error!\n");
+		cout<<"Out of range error!\n";
 	if(dxl_get_rxpacket_error(ERRBIT_CHECKSUM) == 1)
-		printf("Checksum error!\n");
+		cout<<"Checksum error!\n";
 	if(dxl_get_rxpacket_error(ERRBIT_OVERLOAD) == 1)
-		printf("Overload error!\n");
+		cout<<"Overload error!\n";
 	if(dxl_get_rxpacket_error(ERRBIT_INSTRUCTION) == 1)
-		printf("Instruction code error!\n");
+		cout<<"Instruction code error!\n";
 }
 
 void IK::PrintCommStatus(int CommStatus) {
 	switch(CommStatus)
 	{
 	case COMM_TXFAIL:
-		printf("COMM_TXFAIL: Failed transmit instruction packet!\n");
+		cout<<"COMM_TXFAIL: Failed transmit instruction packet!\n";
 		break;
 	case COMM_TXERROR:
-		printf("COMM_TXERROR: Incorrect instruction packet!\n");
+		cout<<"COMM_TXERROR: Incorrect instruction packet!\n";
 		break;
 	case COMM_RXFAIL:
-		printf("COMM_RXFAIL: Failed get status packet from device!\n");
+		cout<<"COMM_RXFAIL: Failed get status packet from device!\n";
 		break;
 	case COMM_RXWAITING:
-		printf("COMM_RXWAITING: Now recieving status packet!\n");
+		cout<<"COMM_RXWAITING: Now recieving status packet!\n";
 		break;
 	case COMM_RXTIMEOUT:
-		printf("COMM_RXTIMEOUT: There is no status packet!\n");
+		cout<<"COMM_RXTIMEOUT: There is no status packet!\n";
 		break;
 	case COMM_RXCORRUPT:
-		printf("COMM_RXCORRUPT: Incorrect status packet!\n");
+		cout<<"COMM_RXCORRUPT: Incorrect status packet!\n";
 		break;
 	default:
-		printf("This is unknown error code!\n");
+		cout<<"This is unknown error code!\n";
 		break;
 	}
 }

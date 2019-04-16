@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pi/Project_Humanoid
+CMAKE_SOURCE_DIR = /home/elpistars/elpistars/Project_Humanoid
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pi/Project_Humanoid/build
+CMAKE_BINARY_DIR = /home/elpistars/elpistars/Project_Humanoid/build
 
 #=============================================================================
 # Directory level rules for directory src
@@ -86,7 +86,7 @@ src/preinstall: src/movement/preinstall
 src/CMakeFiles/humanoid_core.dir/all: src/movement/CMakeFiles/core_movement.dir/all
 	$(MAKE) -f src/CMakeFiles/humanoid_core.dir/build.make src/CMakeFiles/humanoid_core.dir/depend
 	$(MAKE) -f src/CMakeFiles/humanoid_core.dir/build.make src/CMakeFiles/humanoid_core.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/Project_Humanoid/build/CMakeFiles --progress-num=7,8 "Built target humanoid_core"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/elpistars/elpistars/Project_Humanoid/build/CMakeFiles --progress-num=7,8 "Built target humanoid_core"
 .PHONY : src/CMakeFiles/humanoid_core.dir/all
 
 # Include target in all.
@@ -96,9 +96,9 @@ all: src/CMakeFiles/humanoid_core.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/humanoid_core.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Project_Humanoid/build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/elpistars/elpistars/Project_Humanoid/build/CMakeFiles 8
 	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/humanoid_core.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Project_Humanoid/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/elpistars/elpistars/Project_Humanoid/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/humanoid_core.dir/rule
 
 # Convenience name for target.
@@ -141,7 +141,7 @@ src/movement/preinstall:
 src/movement/CMakeFiles/core_movement.dir/all:
 	$(MAKE) -f src/movement/CMakeFiles/core_movement.dir/build.make src/movement/CMakeFiles/core_movement.dir/depend
 	$(MAKE) -f src/movement/CMakeFiles/core_movement.dir/build.make src/movement/CMakeFiles/core_movement.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/Project_Humanoid/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target core_movement"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/elpistars/elpistars/Project_Humanoid/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target core_movement"
 .PHONY : src/movement/CMakeFiles/core_movement.dir/all
 
 # Include target in all.
@@ -151,9 +151,9 @@ all: src/movement/CMakeFiles/core_movement.dir/all
 
 # Build rule for subdir invocation for target.
 src/movement/CMakeFiles/core_movement.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Project_Humanoid/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/elpistars/elpistars/Project_Humanoid/build/CMakeFiles 6
 	$(MAKE) -f CMakeFiles/Makefile2 src/movement/CMakeFiles/core_movement.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Project_Humanoid/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/elpistars/elpistars/Project_Humanoid/build/CMakeFiles 0
 .PHONY : src/movement/CMakeFiles/core_movement.dir/rule
 
 # Convenience name for target.

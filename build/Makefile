@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pi/Project_Humanoid
+CMAKE_SOURCE_DIR = /home/elpistars/elpistars/Project_Humanoid
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pi/Project_Humanoid/build
+CMAKE_BINARY_DIR = /home/elpistars/elpistars/Project_Humanoid/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -124,9 +124,9 @@ install/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Project_Humanoid/build/CMakeFiles /home/pi/Project_Humanoid/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/elpistars/elpistars/Project_Humanoid/build/CMakeFiles /home/elpistars/elpistars/Project_Humanoid/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Project_Humanoid/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/elpistars/elpistars/Project_Humanoid/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

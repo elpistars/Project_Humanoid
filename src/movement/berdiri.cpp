@@ -7,7 +7,7 @@
 
 void berdiri(){
     x_head=548;
-    y_head=310;
+    y_head=500;
     /*dxl_write_word(10,26,1);
     dxl_write_word(10,27,1);
     dxl_write_word(9,26,1);

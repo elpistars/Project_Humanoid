@@ -10,7 +10,9 @@ int main(){
 	for(int i=0; i<10; i++){
 	  berdiri();
 	  usleep(1000);
-	jalan();
-	usleep(1000);  
+	 // putarkanan();
+	 // usleep(1000);
+	 //jalan();
+  	 //usleep(1000);  
 	}
 }

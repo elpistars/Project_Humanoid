@@ -22,34 +22,28 @@ unistd.h
 math.h
 -
 
-/home/pi/Project_Humanoid/src/movement/berdiri.cpp
+/home/elpistars/elpistars/Project_Humanoid/src/movement/berdiri.cpp
 iostream
 -
 unistd.h
 -
 movement/foot_ik.h
-/home/pi/Project_Humanoid/src/movement/movement/foot_ik.h
+/home/elpistars/elpistars/Project_Humanoid/src/movement/movement/foot_ik.h
 
-/home/pi/Project_Humanoid/src/movement/foot_ik.cpp
+/home/elpistars/elpistars/Project_Humanoid/src/movement/foot_ik.cpp
 iostream
 -
 dynamixel/dynamixel.h
-/home/pi/Project_Humanoid/src/movement/dynamixel/dynamixel.h
+/home/elpistars/elpistars/Project_Humanoid/src/movement/dynamixel/dynamixel.h
 movement/foot_ik.h
-/home/pi/Project_Humanoid/src/movement/movement/foot_ik.h
+/home/elpistars/elpistars/Project_Humanoid/src/movement/movement/foot_ik.h
 unistd.h
 -
 math.h
 -
 
-/home/pi/Project_Humanoid/src/movement/langkah_sk2.cpp
+/home/elpistars/elpistars/Project_Humanoid/src/movement/langkah_sk2.cpp
 iostream
--
-thread
--
-mutex
--
-condition_variable
 -
 fcntl.h
 -
@@ -62,23 +56,23 @@ unistd.h
 string.h
 -
 movement/foot_ik.h
-/home/pi/Project_Humanoid/src/movement/movement/foot_ik.h
+/home/elpistars/elpistars/Project_Humanoid/src/movement/movement/foot_ik.h
 movement/core_movement.h
-/home/pi/Project_Humanoid/src/movement/movement/core_movement.h
+/home/elpistars/elpistars/Project_Humanoid/src/movement/movement/core_movement.h
 
-/home/pi/Project_Humanoid/src/movement/putarkanan.cpp
+/home/elpistars/elpistars/Project_Humanoid/src/movement/putarkanan.cpp
 iostream
 -
 unistd.h
 -
 movement/foot_ik.h
-/home/pi/Project_Humanoid/src/movement/movement/foot_ik.h
+/home/elpistars/elpistars/Project_Humanoid/src/movement/movement/foot_ik.h
 
-/home/pi/Project_Humanoid/src/movement/putarkiri.cpp
+/home/elpistars/elpistars/Project_Humanoid/src/movement/putarkiri.cpp
 iostream
 -
 unistd.h
 -
 movement/foot_ik.h
-/home/pi/Project_Humanoid/src/movement/movement/foot_ik.h
+/home/elpistars/elpistars/Project_Humanoid/src/movement/movement/foot_ik.h
 

@@ -1,4 +1,4 @@
-# Install script for directory: /home/pi/Project_Humanoid
+# Install script for directory: /home/elpistars/elpistars/Project_Humanoid
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,7 +34,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/pi/Project_Humanoid/build/src/cmake_install.cmake")
+  include("/home/elpistars/elpistars/Project_Humanoid/build/src/cmake_install.cmake")
 
 endif()
 
@@ -46,5 +46,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/pi/Project_Humanoid/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/elpistars/elpistars/Project_Humanoid/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

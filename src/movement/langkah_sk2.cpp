@@ -1,7 +1,4 @@
 #include <iostream>
-#include <thread>
-#include <mutex>
-#include <condition_variable>
 #include <fcntl.h> 
 #include <sys/stat.h> 
 #include <sys/types.h> 

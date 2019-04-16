@@ -22,13 +22,13 @@ unistd.h
 math.h
 -
 
-/home/pi/Project_Humanoid/src/core.cpp
+/home/elpistars/elpistars/Project_Humanoid/src/core.cpp
 iostream
 -
 dynamixel/dynamixel.h
-/home/pi/Project_Humanoid/src/dynamixel/dynamixel.h
+/home/elpistars/elpistars/Project_Humanoid/src/dynamixel/dynamixel.h
 unistd.h
 -
 movement/core_movement.h
-/home/pi/Project_Humanoid/src/movement/core_movement.h
+/home/elpistars/elpistars/Project_Humanoid/src/movement/core_movement.h
 

@@ -6,5 +6,5 @@ CXX_FLAGS =
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/pi/Project_Humanoid/include 
+CXX_INCLUDES = -I/home/elpistars/elpistars/Project_Humanoid/include 
 

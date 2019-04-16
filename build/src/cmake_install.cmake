@@ -1,4 +1,4 @@
-# Install script for directory: /home/pi/Project_Humanoid/src
+# Install script for directory: /home/elpistars/elpistars/Project_Humanoid/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -33,32 +33,32 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if("${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  if(EXISTS "$ENV{DESTDIR}/home/pi/Project_Humanoid/bin/humanoid_core" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}/home/pi/Project_Humanoid/bin/humanoid_core")
+  if(EXISTS "$ENV{DESTDIR}/home/elpistars/elpistars/Project_Humanoid/bin/humanoid_core" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/home/elpistars/elpistars/Project_Humanoid/bin/humanoid_core")
     file(RPATH_CHECK
-         FILE "$ENV{DESTDIR}/home/pi/Project_Humanoid/bin/humanoid_core"
+         FILE "$ENV{DESTDIR}/home/elpistars/elpistars/Project_Humanoid/bin/humanoid_core"
          RPATH "")
   endif()
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/pi/Project_Humanoid/bin/humanoid_core")
+   "/home/elpistars/elpistars/Project_Humanoid/bin/humanoid_core")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/pi/Project_Humanoid/bin" TYPE EXECUTABLE FILES "/home/pi/Project_Humanoid/build/src/humanoid_core")
-  if(EXISTS "$ENV{DESTDIR}/home/pi/Project_Humanoid/bin/humanoid_core" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}/home/pi/Project_Humanoid/bin/humanoid_core")
+file(INSTALL DESTINATION "/home/elpistars/elpistars/Project_Humanoid/bin" TYPE EXECUTABLE FILES "/home/elpistars/elpistars/Project_Humanoid/build/src/humanoid_core")
+  if(EXISTS "$ENV{DESTDIR}/home/elpistars/elpistars/Project_Humanoid/bin/humanoid_core" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/home/elpistars/elpistars/Project_Humanoid/bin/humanoid_core")
     if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}/home/pi/Project_Humanoid/bin/humanoid_core")
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}/home/elpistars/elpistars/Project_Humanoid/bin/humanoid_core")
     endif()
   endif()
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/pi/Project_Humanoid/build/src/movement/cmake_install.cmake")
+  include("/home/elpistars/elpistars/Project_Humanoid/build/src/movement/cmake_install.cmake")
 
 endif()
 

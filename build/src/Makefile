@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pi/Project_Humanoid
+CMAKE_SOURCE_DIR = /home/elpistars/elpistars/Project_Humanoid
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pi/Project_Humanoid/build
+CMAKE_BINARY_DIR = /home/elpistars/elpistars/Project_Humanoid/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -124,14 +124,14 @@ list_install_components/fast: list_install_components
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/pi/Project_Humanoid/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Project_Humanoid/build/CMakeFiles /home/pi/Project_Humanoid/build/src/CMakeFiles/progress.marks
-	cd /home/pi/Project_Humanoid/build && $(MAKE) -f CMakeFiles/Makefile2 src/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Project_Humanoid/build/CMakeFiles 0
+	cd /home/elpistars/elpistars/Project_Humanoid/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/elpistars/elpistars/Project_Humanoid/build/CMakeFiles /home/elpistars/elpistars/Project_Humanoid/build/src/CMakeFiles/progress.marks
+	cd /home/elpistars/elpistars/Project_Humanoid/build && $(MAKE) -f CMakeFiles/Makefile2 src/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/elpistars/elpistars/Project_Humanoid/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/pi/Project_Humanoid/build && $(MAKE) -f CMakeFiles/Makefile2 src/clean
+	cd /home/elpistars/elpistars/Project_Humanoid/build && $(MAKE) -f CMakeFiles/Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -141,22 +141,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/pi/Project_Humanoid/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd /home/elpistars/elpistars/Project_Humanoid/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/pi/Project_Humanoid/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd /home/elpistars/elpistars/Project_Humanoid/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/pi/Project_Humanoid/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/elpistars/elpistars/Project_Humanoid/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/CMakeFiles/humanoid_core.dir/rule:
-	cd /home/pi/Project_Humanoid/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/humanoid_core.dir/rule
+	cd /home/elpistars/elpistars/Project_Humanoid/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/humanoid_core.dir/rule
 .PHONY : src/CMakeFiles/humanoid_core.dir/rule
 
 # Convenience name for target.
@@ -166,7 +166,7 @@ humanoid_core: src/CMakeFiles/humanoid_core.dir/rule
 
 # fast build rule for target.
 humanoid_core/fast:
-	cd /home/pi/Project_Humanoid/build && $(MAKE) -f src/CMakeFiles/humanoid_core.dir/build.make src/CMakeFiles/humanoid_core.dir/build
+	cd /home/elpistars/elpistars/Project_Humanoid/build && $(MAKE) -f src/CMakeFiles/humanoid_core.dir/build.make src/CMakeFiles/humanoid_core.dir/build
 .PHONY : humanoid_core/fast
 
 core.o: core.cpp.o
@@ -175,7 +175,7 @@ core.o: core.cpp.o
 
 # target to build an object file
 core.cpp.o:
-	cd /home/pi/Project_Humanoid/build && $(MAKE) -f src/CMakeFiles/humanoid_core.dir/build.make src/CMakeFiles/humanoid_core.dir/core.cpp.o
+	cd /home/elpistars/elpistars/Project_Humanoid/build && $(MAKE) -f src/CMakeFiles/humanoid_core.dir/build.make src/CMakeFiles/humanoid_core.dir/core.cpp.o
 .PHONY : core.cpp.o
 
 core.i: core.cpp.i
@@ -184,7 +184,7 @@ core.i: core.cpp.i
 
 # target to preprocess a source file
 core.cpp.i:
-	cd /home/pi/Project_Humanoid/build && $(MAKE) -f src/CMakeFiles/humanoid_core.dir/build.make src/CMakeFiles/humanoid_core.dir/core.cpp.i
+	cd /home/elpistars/elpistars/Project_Humanoid/build && $(MAKE) -f src/CMakeFiles/humanoid_core.dir/build.make src/CMakeFiles/humanoid_core.dir/core.cpp.i
 .PHONY : core.cpp.i
 
 core.s: core.cpp.s
@@ -193,7 +193,7 @@ core.s: core.cpp.s
 
 # target to generate assembly for a file
 core.cpp.s:
-	cd /home/pi/Project_Humanoid/build && $(MAKE) -f src/CMakeFiles/humanoid_core.dir/build.make src/CMakeFiles/humanoid_core.dir/core.cpp.s
+	cd /home/elpistars/elpistars/Project_Humanoid/build && $(MAKE) -f src/CMakeFiles/humanoid_core.dir/build.make src/CMakeFiles/humanoid_core.dir/core.cpp.s
 .PHONY : core.cpp.s
 
 # Help Target
@@ -223,6 +223,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/pi/Project_Humanoid/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/elpistars/elpistars/Project_Humanoid/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
